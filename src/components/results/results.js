@@ -1,29 +1,13 @@
 import React from "react";
 import styles from "./results.module.scss";
-import Plotly from "plotly.js-dist";
-import createPlotlyComponent from "react-plotly.js/factory";
-import { getSummary } from "../../utilities/axios/apiHandler";
-
-const Plot = createPlotlyComponent(Plotly);
+import { Wiki2VecScatter2d, Wiki2VecScatter3d } from '../plots/wiki2vec';
 
 class Results extends React.Component {
   render() {
     return (
       <div className={styles.graphContainer}>
-        <Plot
-          className={styles.graph}
-          data={[
-            {
-              x: [1, 2, 3],
-              y: [2, 6, 3],
-              type: "scatter",
-              mode: "lines+markers",
-              marker: { color: "red" },
-            },
-            { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
-          ]}
-          graphDiv="graph"
-        />
+          <Wiki2VecScatter2d queryWord='QueryWord'/>
+          <Wiki2VecScatter3d queryWord='QueryWord'/>
       </div>
     );
   }
