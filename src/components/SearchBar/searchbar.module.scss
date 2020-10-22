@@ -1,0 +1,31 @@
+.searchbarDiv {
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60vh;
+  margin: auto;
+  padding: 10px;
+}
+
+.searchbarDiv input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.searchbarDiv .searchButton {
+  width: fit-content;
+  margin-left: 10px;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.searchBarForm {
+  display: inline-flex;
+  align-items: center;
+}
