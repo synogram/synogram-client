@@ -7,3 +7,5 @@ describe("Test basic App component", () => {
     shallow(<App />);
   });
 });
+
+//
