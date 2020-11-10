@@ -1,13 +1,13 @@
 import React from "react";
-import Toolbar from "../toolbar/toolbar";
+import Navbar from "../../components/NavBar/Navbar";
 import Auxilary from "../../hoc/auxilary";
-import styles from "./layout.module.scss";
+import styles from "./Layout.module.scss";
 
 class Layout extends React.Component {
   render() {
     return (
       <Auxilary>
-        <Toolbar />
+        <Navbar />
         <div className={styles.content}>{this.props.children}</div>
       </Auxilary>
     );

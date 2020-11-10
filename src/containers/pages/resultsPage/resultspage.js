@@ -1,14 +1,12 @@
 import React from "react";
-import styles from "./resultspage.module.scss";
+import styles from "./ResultsPage.module.scss";
 
-import ResultSelector from "../../../components/resultSelector/resultsSelector";
-import Results from "../../../components/results/results";
+import Results from "../../../components/Results/Results";
 
 class ResultsPage extends React.Component {
   render() {
     return (
-      <div className={styles.main}>
-        <ResultSelector className={styles.selection}></ResultSelector>
+      <div>
         <Results></Results>
       </div>
     );
