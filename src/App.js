@@ -2,9 +2,9 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import Layout from "./containers/Layouts/Layout";
-import HomePage from "./containers/pages/HomePage/HomePage";
-import ResultsPage from "./containers/pages/ResultsPage/ResultsPage";
-import AboutPage from "./containers/pages/AboutPage/AboutPage";
+import HomePage from "./containers/Pages/HomePage/HomePage";
+import ResultsPage from "./containers/Pages/ResultsPage/ResultsPage";
+import AboutPage from "./containers/Pages/AboutPage/AboutPage";
 
 class App extends React.Component {
   render() {
