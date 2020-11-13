@@ -1,0 +1,27 @@
+@import "../../../assets/designs/commonTheme.scss";
+
+.navBar {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navItems {
+  padding: 0 3rem;
+  & a {
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 2.25rem;
+    text-decoration: none;
+    color: $navItemColour;
+  }
+
+  & a:hover {
+    color: $navItemColour_Hover;
+    transform: scale(1.15);
+    transition: transform 0.3s;
+  }
+}

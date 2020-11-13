@@ -1,0 +1,9 @@
+@import "../../assets/designs/commonTheme.scss";
+
+.navContainer {
+  height: 2.25rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: $magnifyCenter;
+  flex-grow: 0;
+}
