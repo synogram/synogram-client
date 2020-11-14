@@ -8,18 +8,6 @@
   align-items: center;
   margin: auto;
   position: relative;
-
-  &:focus-within {
-    .searchButton {
-      transform: translateX(65rem);
-      transition-duration: 0.5s;
-    }
-  }
-  &:not(:focus-within) {
-    .searchButton {
-      transition-duration: 0.5s;
-    }
-  }
 }
 
 .searchBar {
@@ -52,6 +40,16 @@
   box-sizing: border-box;
   padding: 0 2rem;
 }
+
+.searchButton_translate {
+  transform: translateX(65rem);
+  transition-duration: 0.5s;
+}
+
+.searchButton_normal {
+  transition-duration: 0.5s;
+}
+
 .searchIcon {
   width: 2.25rem;
 }
