@@ -8,6 +8,7 @@
   align-items: center;
   margin: auto;
   position: relative;
+  background-color: white;
 }
 
 .searchBar {
@@ -38,7 +39,7 @@
   width: fit-content;
   background-color: transparent;
   box-sizing: border-box;
-  padding: 0 2rem;
+  padding: 0 0.5rem;
 }
 
 .searchButton_translate {
