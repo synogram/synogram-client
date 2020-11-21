@@ -6,8 +6,9 @@ import NavItems from "./NavItems/NavItems";
 const NavBar = (props) => {
   const supportedNavItem = [UI_NAVBAR_ITEM.HOME, UI_NAVBAR_ITEM.ABOUT];
 
+  const passedStyles = props.className ? props.className : "";
   return (
-    <header className={styles.navContainer}>
+    <header className={[styles.navContainer, passedStyles].join(" ")}>
       <NavItems supportedTabs={supportedNavItem} />
     </header>
   );

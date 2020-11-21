@@ -2,8 +2,8 @@
 
 .navContainer {
   height: 2.25rem;
+  width: 20rem;
   box-sizing: border-box;
-  overflow: hidden;
-  background-color: $magnifyCenter;
+  overflow: visible;
   flex-grow: 0;
 }

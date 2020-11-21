@@ -1,13 +1,21 @@
 import React from "react";
-import Navbar from "../../components/NavBar/Navbar";
 import styles from "./Layout.module.scss";
+import { Route } from "react-router-dom";
+import HomePage from "../Pages/HomePage/HomePage";
+import ResultsPage from "../Pages/ResultsPage/ResultsPage";
+import AboutPage from "../Pages/AboutPage/AboutPage";
 
 class Layout extends React.Component {
   render() {
     return (
-      <div className={styles.layout}>
-        <Navbar />
-        <div className={styles.content}>{this.props.children}</div>
+      <div className={styles.layout} style={{ height: "100%" }}>
+        <Route path="/" exact render={() => <HomePage></HomePage>} />
+        <Route
+          path="/results"
+          exact
+          render={() => <ResultsPage></ResultsPage>}
+        />
+        <Route path="/about" exact render={() => <AboutPage />} />
       </div>
     );
   }

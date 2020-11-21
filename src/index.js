@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
+import Layout from "./containers/Layouts/Layout";
 
 // Set base URL Path for Axios requests
 axios.defaults.baseURL = "";
@@ -12,7 +12,7 @@ axios.defaults.baseURL = "";
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App />
+      <Layout></Layout>
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")
