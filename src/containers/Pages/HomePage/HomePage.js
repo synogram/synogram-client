@@ -53,7 +53,7 @@ class HomePage extends React.Component {
               SYN
               <img
                 src={searchIcon}
-                className={styles.searchIconHomepage}
+                className={styles.synogramIconHomepage}
                 alt={"synogram icon"}
               ></img>
               GRAM
