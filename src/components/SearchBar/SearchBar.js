@@ -63,7 +63,7 @@ class SearchBar extends Component {
             placeholder={messages.searchPlaceHolder}
             onFocus={(event) => this.handleOnFocusInput(event)}
             onBlur={(event) => this.handleOnBlurInput(event)}
-            autocomplete="off"
+            autoComplete="off"
           />
         </form>
         <button className={[styles.searchButton, transitionClass].join(" ")}>

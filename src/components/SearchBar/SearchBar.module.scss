@@ -1,12 +1,11 @@
 .searchbarContainer {
-  width: 74.375rem;
+  width: 75rem;
   height: 6.8125rem;
   border: 2px black solid;
   border-radius: 5rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  margin: auto;
   position: relative;
   background-color: white;
 }
@@ -16,7 +15,7 @@
   height: 80%;
 
   position: relative;
-  left: 7.25rem;
+  left: 8%;
   color: #525252;
   outline: none;
   border: none;
@@ -35,15 +34,16 @@
 .searchButton {
   position: absolute;
   z-index: 100;
-  left: 1.5rem;
+  left: 2%;
   width: fit-content;
   background-color: transparent;
   box-sizing: border-box;
   padding: 0 0.5rem;
+  top: 2.1rem;
 }
 
 .searchButton_translate {
-  transform: translateX(65rem);
+  transform: translateX(68rem);
   transition-duration: 0.5s;
 }
 
@@ -53,4 +53,76 @@
 
 .searchIcon {
   width: 2.25rem;
+}
+@media screen and (max-width: 1600px) {
+  .searchbarContainer {
+    width: 65rem;
+  }
+  .searchButton_translate {
+    transform: translateX(58rem);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .searchbarContainer {
+    width: 60rem;
+  }
+  .searchButton_translate {
+    transform: translateX(53rem);
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .searchbarContainer {
+    width: 55rem;
+  }
+  .searchButton_translate {
+    transform: translateX(48rem);
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .searchbarContainer {
+    width: 50rem;
+  }
+  .searchButton_translate {
+    transform: translateX(44rem);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .searchbarContainer {
+    width: 45rem;
+  }
+  .searchButton_translate {
+    transform: translateX(40rem);
+  }
+
+  .searchBar {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .searchbarContainer {
+    width: 40rem;
+  }
+  .searchButton_translate {
+    transform: translateX(35rem);
+  }
+  .searchBar {
+    left: 10%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .searchbarContainer {
+    width: 35rem;
+  }
+  .searchButton_translate {
+    transform: translateX(30.5rem);
+  }
+
+  .searchBar {
+    left: 10%;
+  }
 }
