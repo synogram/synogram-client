@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./HomePage.module.scss";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import messages from "../../../constants/Messages";
-import searchIcon from "../../../assets/icons/searchIcon.svg";
+import searchIcon from "../../../assets/icons/synogramIcon.svg";
 import NavBar from "../../../components/NavBar/Navbar";
 
 class HomePage extends React.Component {
