@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styles from "./SearchBar.module.scss";
-import searchIcon from "../../assets/icons/searchIcon.svg";
+import searchIcon from "../../assets/icons/synogramIcon.svg";
 import messages from "../../constants/Messages";
 
 class SearchBar extends Component {
