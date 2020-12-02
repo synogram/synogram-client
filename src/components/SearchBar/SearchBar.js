@@ -47,7 +47,7 @@ class SearchBar extends Component {
       ? styles.searchButton_translate
       : styles.searchButton_normal;
 
-    const searchbarSize = this.props.barsize ? styles.big : styles.small;
+    const searchbarSize = this.props.isSmall ? styles.small : styles.accessibility;
 
     return (
       <div
