@@ -1,4 +1,4 @@
-.searchbarContainer {
+.big.searchbarContainer {
   width: 75rem;
   height: 6.8125rem;
   border: 2px black solid;
@@ -8,7 +8,6 @@
   align-items: center;
   position: relative;
   background-color: white;
-}
 
 .searchBar {
   width: 80%;
@@ -53,76 +52,139 @@
 
 .searchIcon {
   width: 2.25rem;
+  transform: rotate(180deg);
+  transform: scaleY(-1);
 }
 @media screen and (max-width: 1600px) {
-  .searchbarContainer {
+  & {
     width: 65rem;
   }
-  .searchButton_translate {
+  & .searchButton_translate {
     transform: translateX(58rem);
   }
 }
 @media screen and (max-width: 1400px) {
-  .searchbarContainer {
+  & {
     width: 60rem;
   }
-  .searchButton_translate {
+  & .searchButton_translate {
     transform: translateX(53rem);
   }
 }
 
 @media screen and (max-width: 1300px) {
-  .searchbarContainer {
+  & {
     width: 55rem;
   }
-  .searchButton_translate {
+  & .searchButton_translate {
     transform: translateX(48rem);
   }
 }
 
 @media screen and (max-width: 1150px) {
-  .searchbarContainer {
+  & {
     width: 50rem;
   }
-  .searchButton_translate {
+  & .searchButton_translate {
     transform: translateX(44rem);
   }
 }
 
 @media screen and (max-width: 1000px) {
-  .searchbarContainer {
+  & {
     width: 45rem;
   }
-  .searchButton_translate {
+  & .searchButton_translate {
     transform: translateX(40rem);
   }
 
-  .searchBar {
+  & .searchBar {
     left: 10%;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .searchbarContainer {
+  & {
     width: 40rem;
   }
-  .searchButton_translate {
+  & .searchButton_translate {
     transform: translateX(35rem);
   }
-  .searchBar {
+  & .searchBar {
     left: 10%;
   }
 }
 
 @media screen and (max-width: 750px) {
-  .searchbarContainer {
+  & {
     width: 35rem;
   }
-  .searchButton_translate {
+  & .searchButton_translate {
     transform: translateX(30.5rem);
   }
 
-  .searchBar {
+  & .searchBar {
     left: 10%;
   }
+}
+
+}
+
+.small.searchbarContainer {
+  min-width: 40rem;
+  height: 3.5rem;
+  border: 2px black solid;
+  border-radius: 5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  
+.searchBar {
+  width: 80%;
+  height: 80%;
+
+  position: relative;
+  left: 9%;
+  color: #525252;
+  outline: none;
+  border: none;
+
+  & input {
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    color: #626262;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  z-index: 100;
+  left: 2%;
+  width: fit-content;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+}
+
+.searchButton_translate {
+  transform: translateX(35rem);
+  transition-duration: 0.5s;
+}
+
+.searchButton_normal {
+  transition-duration: 0.5s;
+}
+
+.searchIcon {
+  width: 1.7rem;
+  transform: rotate(180deg);
+  transform: scaleY(-1);
+}
+
 }

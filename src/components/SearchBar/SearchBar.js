@@ -46,9 +46,12 @@ class SearchBar extends Component {
     const transitionClass = this.state.focusWithinDiv
       ? styles.searchButton_translate
       : styles.searchButton_normal;
+
+    const searchbarSize = this.props.barsize ? styles.big : styles.small;
+
     return (
       <div
-        className={styles.searchbarContainer}
+        className={[searchbarSize, styles.searchbarContainer].join(" ")}
         onFocus={() => this.handleOnFocusDiv()}
         onBlur={() => this.handleOnBlurDiv()}
       >

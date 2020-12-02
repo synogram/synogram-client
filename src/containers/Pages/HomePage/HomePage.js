@@ -59,7 +59,7 @@ class HomePage extends React.Component {
               GRAM
             </h1>
           </div>
-          <SearchBar />
+          <SearchBar barsize = {true}/>
           <div className={styles.homepage_description}>
             <p>{messages.front_page_description}</p>
           </div>
