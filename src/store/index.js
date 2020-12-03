@@ -1,0 +1,1 @@
+export {storeSearchWord} from "./actions/GeneralActions"

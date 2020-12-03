@@ -15,6 +15,5 @@ export const getRelatedWords = (params) => {
   //   console.log(res);
   //   return res;
   // });
-  console.log(params);
   return `TODO: IMPLEMENT GET RELATED WORDS`;
 };

@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import styles from "./SearchBar.module.scss";
 import searchIcon from "../../assets/icons/synogramIcon.svg";
 import messages from "../../constants/Messages";
+import {connect} from 'react-redux'
+import * as actionTypes from "../../store/index"
+import {withRouter} from "react-router-dom"
+import route from "../../constants/Routes"
 
 class SearchBar extends Component {
   state = {
@@ -21,7 +25,13 @@ class SearchBar extends Component {
 
   handleOnEnter = (event) => {
     event.preventDefault();
-    // TODO: IMPLEMENT ON ENTER (SEARCH)
+    const researchString = event.target[0].value;
+
+    // Need to store the current word searched
+    this.props.searchWord(researchString);
+
+    // Transition to the "results page"
+    this.props.history.push(route.RESULTS)
   };
 
   handleOnFocusInput = (event) => {
@@ -74,4 +84,10 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+const mapDispatchToProps = dispatch => {
+  return {
+    searchWord: (value) => dispatch(actionTypes.storeSearchWord({searchWord: value}))
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(SearchBar));
