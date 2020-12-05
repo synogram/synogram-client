@@ -1,13 +1,9 @@
 import axios from "./axios/axios";
 
 export const getSummaryAPI = (params) => {
-  // let params = {};
-  
-  // axios.get("/api/web", params).then((res) => {
-  //   console.log(res);
-  // });
+  const QUERY_SEARCHWORD = params
 
-  return axios.get("/api/query/summary")
+  return axios.get("/api/summary/" + QUERY_SEARCHWORD)
 };
 
 export const getRelatedWordsAPI = (params) => {  

@@ -8,6 +8,7 @@ class ResultsPage extends React.Component {
   componentDidMount() {
     if(this.props.searchWord) {
       this.props.getRelatedWord(this.props.searchWord);
+      this.props.getSummary(this.props.searchWord)
     }
   }
 
@@ -34,7 +35,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getRelatedWord: (value) => dispatch(actionTypes.getRelatedWords(value))
+    getRelatedWord: (value) => dispatch(actionTypes.getRelatedWords(value)),
+    getSummary: (value) => dispatch(actionTypes.getSummary(value))
   }
 }
 
