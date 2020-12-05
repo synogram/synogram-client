@@ -28,7 +28,7 @@ class SearchBar extends Component {
     const researchString = event.target[0].value;
 
     // Need to store the current word searched
-    this.props.searchWord(researchString);
+    this.props.storeSearchWord(researchString);
 
     // Transition to the "results page"
     this.props.history.push(route.RESULTS)
@@ -86,7 +86,7 @@ class SearchBar extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchWord: (value) => dispatch(actionTypes.storeSearchWord({searchWord: value}))
+    storeSearchWord: (value) => dispatch(actionTypes.storeSearchWord({searchWord: value}))
   }
 }
 
