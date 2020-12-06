@@ -7,7 +7,6 @@ const initialState = {
 }
 
 const SummaryReducer = (state = initialState, action) => {
-    console.log(action);
     switch(action.type) {
         case actionTypes.GET_WORD_SUMMARY_BEGIN:
             return {...state, loading: true}
