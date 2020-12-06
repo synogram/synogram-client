@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import styles from "./SearchBar.module.scss";
 import searchIcon from "../../assets/icons/synogramIcon.svg";
 import messages from "../../constants/Messages";
+import axios from "axios";
+import { getRelatedWords, getSummary } from "../../utilities/axios/apiHandler";
 
 class SearchBar extends Component {
   state = {
     focusWithinDiv: false,
+    input: ""
   };
 
   searchInputId = "search_input";
@@ -19,9 +22,15 @@ class SearchBar extends Component {
     return;
   };
 
+  handleInput = (event) => {
+    event.preventDefault();
+    this.setState({input: event.target.value});
+  }
+
   handleOnEnter = (event) => {
     event.preventDefault();
-    // TODO: IMPLEMENT ON ENTER (SEARCH)
+    getRelatedWords(this.state.input, 2);
+    getSummary(this.state.input)
   };
 
   handleOnFocusInput = (event) => {
@@ -63,6 +72,7 @@ class SearchBar extends Component {
             placeholder={messages.searchPlaceHolder}
             onFocus={(event) => this.handleOnFocusInput(event)}
             onBlur={(event) => this.handleOnBlurInput(event)}
+            onChange={(event) => this.handleInput(event)}
             autoComplete="off"
           />
         </form>
