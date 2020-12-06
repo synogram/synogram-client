@@ -5,14 +5,39 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 import Layout from "./containers/Layouts/Layout";
+import {createStore, combineReducers, applyMiddleware, compose} from "redux";
+import relatedWordsReducer from "./store/reducers/RelatedWordsReducer"
+import summaryReducer from "./store/reducers/SummaryReducer"
+import generalReducer from "./store/reducers/GeneralReducer"
+import {Provider} from "react-redux"
+import thunk from 'redux-thunk'
+import {RESET_REDUX_STATE} from "./store/actions/actionTypes"
 
 // Set base URL Path for Axios requests
 axios.defaults.baseURL = "";
 
+const appReducer = combineReducers ({
+  related: relatedWordsReducer,
+  summary: summaryReducer,
+  general: generalReducer
+})
+
+const rootReducer = (state, action) => {
+  if(action.type === RESET_REDUX_STATE) {
+    state = undefined;
+  }
+  return appReducer(state, action);
+}
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <Layout></Layout>
+      <Provider store = {store}>
+        <Layout></Layout>
+      </Provider>
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")
