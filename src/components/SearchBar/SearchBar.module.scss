@@ -8,121 +8,153 @@
   align-items: center;
   position: relative;
   background-color: white;
-}
 
-.searchBar {
-  width: 80%;
-  height: 80%;
+  .searchBar {
+    width: 80%;
+    height: 80%;
 
-  position: relative;
-  left: 8%;
-  color: #525252;
-  outline: none;
-  border: none;
-
-  & input {
-    width: 100%;
-    height: 100%;
-    font-size: 2.25rem;
-    color: #626262;
+    position: relative;
+    left: 8%;
+    color: #525252;
     outline: none;
     border: none;
+
+    & input {
+      width: 100%;
+      height: 100%;
+      font-size: 2.25rem;
+      color: #626262;
+      outline: none;
+      border: none;
+      box-sizing: border-box;
+    }
+  }
+
+  .searchButton {
+    position: absolute;
+    z-index: 100;
+    left: 2%;
+    width: fit-content;
+    background-color: transparent;
     box-sizing: border-box;
+    padding: 0 0.5rem;
+    top: 2.1rem;
   }
-}
 
-.searchButton {
-  position: absolute;
-  z-index: 100;
-  left: 2%;
-  width: fit-content;
-  background-color: transparent;
-  box-sizing: border-box;
-  padding: 0 0.5rem;
-  top: 2.1rem;
-}
-
-.searchButton_translate {
-  transform: translateX(68rem);
-  transition-duration: 0.5s;
-}
-
-.searchButton_normal {
-  transition-duration: 0.5s;
-}
-
-.searchIcon {
-  width: 2.25rem;
-}
-@media screen and (max-width: 1600px) {
-  .searchbarContainer {
-    width: 65rem;
-  }
   .searchButton_translate {
-    transform: translateX(58rem);
+    transform: translateX(68rem);
+    transition-duration: 0.5s;
   }
-}
-@media screen and (max-width: 1400px) {
-  .searchbarContainer {
-    width: 60rem;
-  }
-  .searchButton_translate {
-    transform: translateX(53rem);
-  }
-}
 
-@media screen and (max-width: 1300px) {
-  .searchbarContainer {
-    width: 55rem;
+  .searchButton_normal {
+    transition-duration: 0.5s;
   }
-  .searchButton_translate {
-    transform: translateX(48rem);
+
+  .searchIcon {
+    width: 2.25rem;
+    transform: rotate(180deg);
+    transform: scaleY(-1);
   }
 }
 
-@media screen and (max-width: 1150px) {
-  .searchbarContainer {
-    width: 50rem;
-  }
-  .searchButton_translate {
-    transform: translateX(44rem);
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .searchbarContainer {
-    width: 45rem;
-  }
-  .searchButton_translate {
-    transform: translateX(40rem);
-  }
-
-  .searchBar {
-    left: 10%;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .searchbarContainer {
+// Override some of the existing css properties when using the "smaller" version of the search bar
+.small.searchbarContainer {
+    min-width: 40rem;
     width: 40rem;
+    height: 3.5rem;
+    
+  & .searchBar {
+    left: 9%;
+  
+    & input {
+      font-size: 1.5rem;
+    }
   }
-  .searchButton_translate {
+  & .searchButton {
+    top: unset;
+  }
+  
+  & .searchButton_translate {
     transform: translateX(35rem);
   }
-  .searchBar {
-    left: 10%;
+  
+  & .searchIcon {
+    width: 1.7rem;
   }
 }
 
-@media screen and (max-width: 750px) {
-  .searchbarContainer {
-    width: 35rem;
+// media queries to enhance user experience. Only done when the search bar is in big form
+.accessibility {
+  @media screen and (max-width: 1600px) {
+    & {
+      width: 65rem;
+    }
+    & .searchButton_translate {
+      transform: translateX(58rem);
+    }
   }
-  .searchButton_translate {
-    transform: translateX(30.5rem);
+  @media screen and (max-width: 1400px) {
+    & {
+      width: 60rem;
+    }
+    & .searchButton_translate {
+      transform: translateX(53rem);
+    }
   }
 
-  .searchBar {
-    left: 10%;
+  @media screen and (max-width: 1300px) {
+    & {
+      width: 55rem;
+    }
+    & .searchButton_translate {
+      transform: translateX(48rem);
+    }
+  }
+
+  @media screen and (max-width: 1150px) {
+    & {
+      width: 50rem;
+    }
+    & .searchButton_translate {
+      transform: translateX(44rem);
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    & {
+      width: 45rem;
+    }
+    & .searchButton_translate {
+      transform: translateX(40rem);
+    }
+
+    & .searchBar {
+      left: 10%;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    & {
+      width: 40rem;
+    }
+    & .searchButton_translate {
+      transform: translateX(35rem);
+    }
+    & .searchBar {
+      left: 10%;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    & {
+      width: 35rem;
+    }
+    & .searchButton_translate {
+      transform: translateX(30.5rem);
+    }
+
+    & .searchBar {
+      left: 10%;
+    }
   }
 }
