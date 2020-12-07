@@ -1,3 +1,5 @@
+@import "../../assets//designs/commonTheme.scss";
+
 .container {
     display: flex;
     width: 26rem;
@@ -17,8 +19,8 @@
         width: 18rem;
         height: 6rem;
         border-radius: 3.75rem;
-        border: 5px solid #FD5D08;
+        border: 5px solid $graphSelection;
         font-size: 2.2rem;
-        color: #FD5D08;
+        color: $graphSelection;
     }
 }
