@@ -1,66 +1,62 @@
 import React from "react";
 import styles from "./ResultsPage.module.scss";
-<<<<<<< Updated upstream
 import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
 import { connect } from "react-redux";
-import * as actionTypes from "../../../store/index"
-import GraphSelection from "../../../components/GraphSelection/GraphSelection"
-class ResultsPage extends React.Component {
-=======
+import * as actionTypes from "../../../store/index";
+import GraphSelection from "../../../components/GraphSelection/GraphSelection";
 import Descriptions from "../../Descriptions/Descriptions";
->>>>>>> Stashed changes
 
+class ResultsPage extends React.Component {
   componentDidMount() {
-    if(this.props.searchWord) {
+    if (this.props.searchWord) {
       this.generateSearchWordData();
     }
   }
 
   componentDidUpdate(prevprops, prevState) {
-    if(prevprops.searchWord !== this.props.searchWord) {
+    if (prevprops.searchWord !== this.props.searchWord) {
       this.generateSearchWordData();
     }
   }
 
-  generateSearchWordData () {
+  generateSearchWordData() {
     this.props.getRelatedWord(this.props.searchWord);
-    this.props.getSummary(this.props.searchWord)
+    this.props.getSummary(this.props.searchWord);
   }
 
   render() {
     return (
       <div>
-<<<<<<< Updated upstream
-        <NavBarWSeachbar/>
+        <NavBarWSeachbar />
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
-        {this.props.searchWord && this.props.relatedWords.length < 1 && this.props.loading && <div>Loading...</div>}
-        {this.props.relatedWords.length > 0 && !this.props.loading && <div>Loaded</div>}
+        {this.props.searchWord &&
+          this.props.relatedWords.length < 1 &&
+          this.props.loading && <div>Loading...</div>}
+        {this.props.relatedWords.length > 0 && !this.props.loading && (
+          <div>Loaded</div>
+        )}
         {this.props.error && <div>error</div>}
-        <GraphSelection/>
-=======
-        <Results></Results>
+        <GraphSelection />
         <Descriptions />
->>>>>>> Stashed changes
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     searchWord: state.general.searchWord,
     loading: state.related.loading,
     relatedWords: state.related.relatedWords,
-    error: state.related.error
-  }
-}
+    error: state.related.error,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getRelatedWord: (value) => dispatch(actionTypes.getRelatedWords(value)),
-    getSummary: (value) => dispatch(actionTypes.getSummary(value))
-  }
-}
+    getSummary: (value) => dispatch(actionTypes.getSummary(value)),
+  };
+};
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(ResultsPage) ;
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsPage);
