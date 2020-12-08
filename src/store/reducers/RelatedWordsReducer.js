@@ -11,7 +11,7 @@ const RelatedWordsReducer = (state = initialState, action) => {
         case actionTypes.GET_RELATED_WORDS_BEGIN:
             return {...state, loading: true};
         case actionTypes.GET_RELATED_WORDS_SUCCESS:
-            return {...state, loading: false, relatedWords: action.res.words} 
+            return {...state, loading: false, relatedWords: action.res} 
         case actionTypes.GET_RELATED_WORDS_FAILURE: 
             return {...state, loading: false, error: action.err} 
         default:

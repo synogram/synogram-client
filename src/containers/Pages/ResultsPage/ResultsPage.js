@@ -8,9 +8,19 @@ class ResultsPage extends React.Component {
 
   componentDidMount() {
     if(this.props.searchWord) {
-      this.props.getRelatedWord(this.props.searchWord);
-      this.props.getSummary(this.props.searchWord)
+      this.generateSearchWordData();
     }
+  }
+
+  componentDidUpdate(prevprops, prevState) {
+    if(prevprops.searchWord !== this.props.searchWord) {
+      this.generateSearchWordData();
+    }
+  }
+
+  generateSearchWordData () {
+    this.props.getRelatedWord(this.props.searchWord);
+    this.props.getSummary(this.props.searchWord)
   }
 
   render() {

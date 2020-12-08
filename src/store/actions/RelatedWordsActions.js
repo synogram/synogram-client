@@ -7,7 +7,8 @@ export const getRelatedWords = (payload) => {
     
         return getRelatedWordsAPI(payload)
             .then(res => {
-                dispatch(getRelatedWordsSuccess(res.data)) 
+                const data = res.data.words ? res.data.words : [];
+                dispatch(getRelatedWordsSuccess(data))
             }).catch(err => {
                dispatch(getRelatedWordsFailure(err)) 
             })
