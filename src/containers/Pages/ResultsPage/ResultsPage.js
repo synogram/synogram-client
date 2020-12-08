@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "./ResultsPage.module.scss";
+<<<<<<< Updated upstream
 import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
 import { connect } from "react-redux";
 import * as actionTypes from "../../../store/index"
 import GraphSelection from "../../../components/GraphSelection/GraphSelection"
 class ResultsPage extends React.Component {
+=======
+import Descriptions from "../../Descriptions/Descriptions";
+>>>>>>> Stashed changes
 
   componentDidMount() {
     if(this.props.searchWord) {
@@ -26,12 +30,17 @@ class ResultsPage extends React.Component {
   render() {
     return (
       <div>
+<<<<<<< Updated upstream
         <NavBarWSeachbar/>
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
         {this.props.searchWord && this.props.relatedWords.length < 1 && this.props.loading && <div>Loading...</div>}
         {this.props.relatedWords.length > 0 && !this.props.loading && <div>Loaded</div>}
         {this.props.error && <div>error</div>}
         <GraphSelection/>
+=======
+        <Results></Results>
+        <Descriptions />
+>>>>>>> Stashed changes
       </div>
     );
   }

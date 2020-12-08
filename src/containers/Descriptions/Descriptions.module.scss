@@ -1,0 +1,43 @@
+.mainDescriptionBox {
+  background: #cccccc 0% 0% no-repeat padding-box;
+  border-radius: 2.5vw;
+  opacity: 0.69;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+  & .wordList {
+    width: 25%;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    opacity: 1;
+    margin-bottom: 3vw;
+    button {
+      margin: 0.625vw;
+      padding: 0.25vw 0.9375vw;
+      border-radius: 2vw;
+      text-align: center;
+      letter-spacing: 0px;
+      font-size: 1.75vw;
+    }
+  }
+  & .mainDescriptionItem {
+    width: 65%;
+    text-align: left;
+    h1 {
+      text-align: left;
+      font-size: 3vw;
+    }
+    p {
+      text-align: justify;
+      font-size: 1vw;
+    }
+  }
+  & .mainDescriptionExpandBtn {
+    width: 85%;
+    height: 2vw;
+    background-color: #cccccc;
+    font-size: 2.5vw;
+  }
+}
