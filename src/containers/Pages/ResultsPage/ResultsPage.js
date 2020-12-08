@@ -3,7 +3,7 @@ import styles from "./ResultsPage.module.scss";
 import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
 import { connect } from "react-redux";
 import * as actionTypes from "../../../store/index"
-
+import GraphSelection from "../../../components/GraphSelection/GraphSelection"
 class ResultsPage extends React.Component {
 
   componentDidMount() {
@@ -31,6 +31,7 @@ class ResultsPage extends React.Component {
         {this.props.searchWord && this.props.relatedWords.length < 1 && this.props.loading && <div>Loading...</div>}
         {this.props.relatedWords.length > 0 && !this.props.loading && <div>Loaded</div>}
         {this.props.error && <div>error</div>}
+        <GraphSelection/>
       </div>
     );
   }
