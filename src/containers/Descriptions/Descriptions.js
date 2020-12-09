@@ -29,14 +29,8 @@ class Descriptions extends Component {
     super(props);
     this.myRef = React.createRef();
   }
-  getRandomInt = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  };
 
   scrollToView = () => {
-    console.log(this.myRef);
     this.myRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -61,7 +55,7 @@ class Descriptions extends Component {
           className={styles.mainDescriptionExpandBtn}
           onClick={this.scrollToView}
         >
-          +
+          ^
         </button>
         <div className={styles.wordList}>{randomWords.slice(0, 10)}</div>
         <div className={styles.mainDescriptionItem}>
