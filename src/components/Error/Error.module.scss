@@ -12,6 +12,7 @@ $smallHexagonHeight: calc(#{$smallHexagonWidth} * #{tan(30deg)});
   width: 50rem;
   margin: 0 auto;
   height: fit-content;
+  margin-top: 30vh;
 }
 
 .errorImage {

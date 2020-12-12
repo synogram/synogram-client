@@ -28,7 +28,6 @@ class ResultsPage extends React.Component {
     return (
       <div className={styles.container}>
         <NavBarWSeachbar />
-        <Error />
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
         {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
@@ -38,7 +37,7 @@ class ResultsPage extends React.Component {
             <GraphSelection />
           </div>
         )}
-        {this.props.error && <div>error</div>}
+        {this.props.error && <Error />}
       </div>
     );
   }

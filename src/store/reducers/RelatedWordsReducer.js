@@ -9,7 +9,7 @@ const initialState = {
 const RelatedWordsReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_RELATED_WORDS_BEGIN:
-      return {...state, loading: true};
+      return {...state, loading: true, error: null};
     case actionTypes.GET_RELATED_WORDS_SUCCESS:
       return {...state, loading: false, relatedWords: action.res};
     case actionTypes.GET_RELATED_WORDS_FAILURE:
