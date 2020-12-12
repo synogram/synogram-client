@@ -3,9 +3,9 @@ import styles from "./HomePage.module.scss";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import messages from "../../../constants/Messages";
 import NavBar from "../../../components/NavBar/Navbar";
-import { connect } from "react-redux";
-import { RESET_REDUX_STATE } from "../../../store/actions/actionTypes";
-import Logo from "../../../components/Logo/Logo"
+import {connect} from "react-redux";
+import {RESET_REDUX_STATE} from "../../../store/actions/actionTypes";
+import Logo from "../../../components/Logo/Logo";
 
 class HomePage extends React.Component {
   state = {
@@ -18,9 +18,9 @@ class HomePage extends React.Component {
         document.body.clientHeight ||
       document.body.scrollHeight > document.body.clientHeight
     ) {
-      this.setState({ scrollbarVisible: true });
+      this.setState({scrollbarVisible: true});
     }
-    
+
     // If you return to the homepage. The redux state has to reset.
     this.props.resetRedux();
   }
@@ -53,8 +53,8 @@ class HomePage extends React.Component {
 
         <div className={styles.content_container}>
           <NavBar className={styles.homepage_navbar} />
-          <Logo/>          
-          <SearchBar isSmall = {false}/>
+          <Logo />
+          <SearchBar isSmall={false} />
           <div className={styles.homepage_description}>
             <p>{messages.front_page_description}</p>
           </div>
@@ -63,10 +63,10 @@ class HomePage extends React.Component {
     );
   }
 }
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    resetRedux: () => dispatch({type: RESET_REDUX_STATE})
-  }
-}
+    resetRedux: () => dispatch({type: RESET_REDUX_STATE}),
+  };
+};
 
 export default connect(null, mapDispatchToProps)(HomePage);

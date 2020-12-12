@@ -1,5 +1,5 @@
 import React from "react";
-import { UI_NAVBAR_ITEM } from "../../constants/Constants";
+import {UI_NAVBAR_ITEM} from "../../constants/Constants";
 import styles from "./Navbar.module.scss";
 import NavItems from "./NavItems/NavItems";
 
