@@ -4,6 +4,7 @@ import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachba
 import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
 import GraphSelection from "../../../components/GraphSelection/GraphSelection";
+import Loading from "../../../components/Loading/Loading";
 class ResultsPage extends React.Component {
   componentDidMount() {
     if (this.props.searchWord) {
@@ -24,17 +25,18 @@ class ResultsPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.container}>
         <NavBarWSeachbar />
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
         {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
-          this.props.loading && <div>Loading...</div>}
+          this.props.loading && <Loading />}
         {this.props.relatedWords.length > 0 && !this.props.loading && (
-          <div>Loaded</div>
+          <div>
+            <GraphSelection />
+          </div>
         )}
         {this.props.error && <div>error</div>}
-        <GraphSelection />
       </div>
     );
   }
