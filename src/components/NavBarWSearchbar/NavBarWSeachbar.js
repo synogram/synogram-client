@@ -17,11 +17,6 @@ const NavBarWSeachbar = (props) => {
                 <img src = {icon}/>
             </div>
             <SearchBar isSmall = {true}/>
-            <div className = {styles.sidedrawer_toggle}>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
         </div>
     )
 }
