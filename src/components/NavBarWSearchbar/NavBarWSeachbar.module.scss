@@ -15,3 +15,23 @@
         width: 3rem;
     }
 }
+
+.Logo {
+    margin-left: 1.5rem;
+    cursor: pointer;
+    & h1 {
+      font-size: 3rem;
+    }
+
+    
+    & img {
+        width: 3rem !important;
+        margin-right: -0.5rem !important;
+        margin-bottom: -0.1rem !important;
+    }
+}
+
+.searchbar {
+    margin-left: 1rem;
+}
+

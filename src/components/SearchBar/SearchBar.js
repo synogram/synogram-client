@@ -58,10 +58,10 @@ class SearchBar extends Component {
       : styles.searchButton_normal;
 
     const searchbarSize = this.props.isSmall ? styles.small : styles.accessibility;
-
+    const extraStyles = this.props.styles ? this.props.styles : null;
     return (
       <div
-        className={[searchbarSize, styles.searchbarContainer].join(" ")}
+        className={[searchbarSize, styles.searchbarContainer, extraStyles].join(" ")}
         onFocus={() => this.handleOnFocusDiv()}
         onBlur={() => this.handleOnBlurDiv()}
       >
