@@ -5,6 +5,7 @@ import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
 import GraphSelection from "../../../components/GraphSelection/GraphSelection";
 import Loading from "../../../components/Loading/Loading";
+import Error from "../../../components/Error/Error";
 class ResultsPage extends React.Component {
   componentDidMount() {
     if (this.props.searchWord) {
@@ -27,6 +28,7 @@ class ResultsPage extends React.Component {
     return (
       <div className={styles.container}>
         <NavBarWSeachbar />
+        <Error />
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
         {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
