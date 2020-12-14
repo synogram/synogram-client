@@ -27,3 +27,33 @@
     text-justify: inter-word;
   }
 }
+
+.magnifyGlassContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  .magnifyGlass {
+    position: relative;
+    border: 0.5vw solid white;
+    border-radius: 50%;
+    width: 13.75vw;
+    height: 13.75vw;
+    z-index: 86;
+    .imgAvatar {
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .magnifyGlassHandle {
+    height: 0.5vw;
+    width: 4%;
+    background-color: white;
+    transform: rotate(60deg);
+    position: relative;
+    z-index: 0;
+    left: 10%;
+  }
+}

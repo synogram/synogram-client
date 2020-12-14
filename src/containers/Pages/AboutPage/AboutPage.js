@@ -15,7 +15,18 @@ class AboutPage extends React.Component {
     return (
       <div className={styles.content}>
         {ABOUT_US}
-        <div className={styles.team}></div>
+        <div className={styles.team}>
+          <div className={styles.magnifyGlassContainer}>
+            <div className={styles.magnifyGlass}>
+              <img
+                src="https://www.w3schools.com/howto/img_avatar.png"
+                alt="test"
+                className={styles.imgAvatar}
+              ></img>
+            </div>
+            <div className={styles.magnifyGlassHandle}></div>
+          </div>
+        </div>
       </div>
     );
   }
