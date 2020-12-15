@@ -54,10 +54,12 @@ class AboutPage extends React.Component {
                 ></img>
               </a>
             </div>
+            <div className={styles.magnifyGlassHandle}></div>
           </div>
-          <div className={styles.magnifyGlassHandle}></div>
-          <h4>{teamMember.name}</h4>
-          <p>{teamMember.description}</p>
+          <div className={styles.teamMemberInfo}>
+            <h4>{teamMember.name}</h4>
+            <p>{teamMember.description}</p>
+          </div>
         </div>
       );
     });

@@ -47,6 +47,15 @@ p {
   align-items: flex-start;
   align-content: flex-start;
   width: 17vw;
+  height: 500px;
+  z-index: 80;
+  &:hover .imgAvatar {
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+  }
+  &:hover .magnifyGlass .logoAvatarContainer .avatarIcon {
+    visibility: visible;
+  }
   .magnifyGlass {
     align-self: center;
     position: relative;
@@ -61,10 +70,7 @@ p {
       width: 100%;
       z-index: 90;
     }
-    &:hover .imgAvatar {
-      filter: blur(4px);
-      -webkit-filter: blur(4px);
-    }
+
     .logoAvatarContainer {
       align-self: center;
       display: flex;
@@ -82,19 +88,16 @@ p {
         align-self: center;
         visibility: hidden;
       }
-      &:hover .avatarIcon {
-        visibility: visible;
-      }
     }
   }
   .magnifyGlassHandle {
     height: 0.5vw;
-    width: 15%;
+    width: 25%;
     background-color: white;
-    transform: rotate(60deg);
-    position: relative;
+    transform: rotate(50deg);
+    position: absolute;
     z-index: 0;
-    left: 65%;
+    left: 75%;
     border-radius: 15%;
   }
 
@@ -106,12 +109,14 @@ p {
     transition: border-width 0.2s ease-in-out;
     border: 0.1vw solid white;
   }
-  h4 {
-    align-self: center;
-    margin-top: 2vw;
-    margin-bottom: 0.5vw;
-  }
-  p {
-    margin-top: 0;
+  .teamMemberInfo {
+    align-self: flex-end;
+    h4 {
+      text-align: center;
+      margin-bottom: 0.5vw;
+    }
+    p {
+      margin-top: 0;
+    }
   }
 }
