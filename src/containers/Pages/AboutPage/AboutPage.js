@@ -5,6 +5,8 @@ import Profiles from "../../../constants/Profiles.js";
 import emailIcon from "../../../assets/icons/email-logo.svg";
 import githubIcon from "../../../assets/icons/github-logo.svg";
 import linkedinIcon from "../../../assets/icons/linkedin-logo.svg";
+import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
+import Aux from "../../../hoc/auxilary";
 
 class AboutPage extends React.Component {
   render() {
@@ -61,10 +63,13 @@ class AboutPage extends React.Component {
     });
 
     return (
-      <div className={styles.content}>
-        {ABOUT_US}
-        <div className={styles.team}>{TEAM}</div>
-      </div>
+      <Aux>
+        <NavBarWSeachbar searchBarHidden={true} />
+        <div className={styles.content}>
+          {ABOUT_US}
+          <div className={styles.team}>{TEAM}</div>
+        </div>
+      </Aux>
     );
   }
 }
