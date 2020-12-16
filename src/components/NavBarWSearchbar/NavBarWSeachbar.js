@@ -14,7 +14,7 @@ const NavBarWSeachbar = (props) => {
       <div className={styles.icon} onClick={onClickIcon}>
         <img src={icon} />
       </div>
-      {!props.searchBarHidden && <SearchBar isSmall={true} />}
+      {!props.isSearchBarHidden && <SearchBar isSmall={true} />}
       <div className={styles.sidedrawer_toggle}>
         <div></div>
         <div></div>

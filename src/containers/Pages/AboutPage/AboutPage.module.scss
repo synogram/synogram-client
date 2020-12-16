@@ -53,6 +53,10 @@ p {
     filter: blur(4px);
     -webkit-filter: blur(4px);
   }
+  &:hover .magnifyGlassHandle {
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+  }
   &:hover .magnifyGlass .logoAvatarContainer .avatarIcon {
     visibility: visible;
   }

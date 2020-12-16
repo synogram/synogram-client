@@ -66,7 +66,7 @@ class AboutPage extends React.Component {
 
     return (
       <Aux>
-        <NavBarWSeachbar searchBarHidden={true} />
+        <NavBarWSeachbar isSearchBarHidden={true} />
         <div className={styles.content}>
           {ABOUT_US}
           <div className={styles.team}>{TEAM}</div>
