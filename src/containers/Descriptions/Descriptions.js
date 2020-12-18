@@ -57,7 +57,7 @@ class Descriptions extends Component {
         >
           ^
         </button>
-        <div className={styles.wordList}>{randomWords.slice(0, 10)}</div>
+        <div className={styles.wordList}>{randomWords.slice(0, 15)}</div>
         <div className={styles.mainDescriptionItem}>
           <h1>Test title</h1>
           <p>
