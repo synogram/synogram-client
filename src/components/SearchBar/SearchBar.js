@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import styles from "./SearchBar.module.scss";
 import searchIcon from "../../assets/icons/synogramIcon.svg";
 import messages from "../../constants/Messages";
-import {connect} from 'react-redux'
-import * as actionTypes from "../../store/index"
-import {withRouter} from "react-router-dom"
-import route from "../../constants/Routes"
+import {connect} from "react-redux";
+import * as actionTypes from "../../store/index";
+import {withRouter} from "react-router-dom";
+import route from "../../constants/Routes";
 
 class SearchBar extends Component {
   state = {
@@ -31,7 +31,7 @@ class SearchBar extends Component {
     this.props.storeSearchWord(researchString);
 
     // Transition to the "results page"
-    this.props.history.push(route.RESULTS)
+    this.props.history.push(route.RESULTS);
   };
 
   handleOnFocusInput = (event) => {
@@ -43,12 +43,12 @@ class SearchBar extends Component {
   };
 
   handleOnFocusDiv = () => {
-    this.setState({ focusWithinDiv: true });
+    this.setState({focusWithinDiv: true});
     this.getElementById(this.searchInputId).focus();
   };
 
   handleOnBlurDiv = () => {
-    this.setState({ focusWithinDiv: false });
+    this.setState({focusWithinDiv: false});
   };
 
   render() {
@@ -57,11 +57,15 @@ class SearchBar extends Component {
       ? styles.searchButton_translate
       : styles.searchButton_normal;
 
-    const searchbarSize = this.props.isSmall ? styles.small : styles.accessibility;
-
+    const searchbarSize = this.props.isSmall
+      ? styles.small
+      : styles.accessibility;
+    const extraStyles = this.props.styles ? this.props.styles : null;
     return (
       <div
-        className={[searchbarSize, styles.searchbarContainer].join(" ")}
+        className={[searchbarSize, styles.searchbarContainer, extraStyles].join(
+          " "
+        )}
         onFocus={() => this.handleOnFocusDiv()}
         onBlur={() => this.handleOnBlurDiv()}
       >
@@ -87,10 +91,11 @@ class SearchBar extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    storeSearchWord: (value) => dispatch(actionTypes.storeSearchWord({searchWord: value}))
-  }
-}
+    storeSearchWord: (value) =>
+      dispatch(actionTypes.storeSearchWord({searchWord: value})),
+  };
+};
 
 export default withRouter(connect(null, mapDispatchToProps)(SearchBar));

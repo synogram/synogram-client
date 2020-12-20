@@ -1,0 +1,23 @@
+.Logo {
+    color: #5f5f5f;
+    text-align: center;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    overflow-x: hidden;
+    width: fit-content;
+    
+    & h1 {
+      display: contents;
+      margin: 0;
+      font-size: 13vw;
+    }
+
+    
+    & .synogramIcon {
+        width: 12.5vw;
+        margin-top: -2.5vw;
+        margin-right: -2.5vw;
+    }
+}
+
