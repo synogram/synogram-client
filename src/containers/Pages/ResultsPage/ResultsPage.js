@@ -3,9 +3,10 @@ import styles from "./ResultsPage.module.scss";
 import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
 import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
-import GraphSelection from "../../../components/GraphSelection/GraphSelection";
 import Loading from "../../../components/Loading/Loading";
 import Error from "../../../components/Error/Error";
+import GraphSelection from "../../../components/GraphSelection/GraphSelection";
+import TreeGraph from "../../../components/TreeGraph/TreeGraph";
 class ResultsPage extends React.Component {
   componentDidMount() {
     if (this.props.searchWord) {
@@ -28,16 +29,18 @@ class ResultsPage extends React.Component {
     return (
       <div className={styles.container}>
         <NavBarWSeachbar />
-        {!this.props.searchWord && <div>No word searched. Try again.</div>}
-        {this.props.searchWord &&
+        {/* {!this.props.searchWord && <div>No word searched. Try again.</div>} */}
+        {/* {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
-          this.props.loading && <Loading />}
-        {this.props.relatedWords.length > 0 && !this.props.loading && (
-          <div>
-            <GraphSelection />
-          </div>
-        )}
-        {this.props.error && <Error />}
+          this.props.loading && <Loading />} */}
+        {/* {this.props.relatedWords.length > 0 && !this.props.loading && (
+          
+        )} */}
+        <div>
+          {/* <GraphSelection /> */}
+          <TreeGraph />
+        </div>
+        {/* {this.props.error && <Error />} */}
       </div>
     );
   }
