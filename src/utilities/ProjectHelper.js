@@ -1,4 +1,4 @@
-import { UI_NAVBAR_ITEM, UI_PROPERTIES } from "../constants/Constants";
+import {UI_NAVBAR_ITEM, UI_PROPERTIES} from "../constants/Constants";
 import messages from "../constants/Messages";
 
 const NAV_BAR_ITEMS = {
