@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import styles from "./SearchBar.module.scss";
 import searchIcon from "../../assets/icons/synogramIcon.svg";
 import messages from "../../constants/Messages";
-import axios from "axios";
-import { getRelatedWords, getSummary } from "../../utilities/axios/apiHandler";
+import {connect} from 'react-redux';
+import * as actionTypes from "../../store/index";
+import {withRouter} from "react-router-dom";
+import route from "../../constants/Routes";
 
 class SearchBar extends Component {
   state = {
@@ -29,8 +31,13 @@ class SearchBar extends Component {
 
   handleOnEnter = (event) => {
     event.preventDefault();
-    getRelatedWords(this.state.input, 2);
-    getSummary(this.state.input)
+    const researchString = event.target[0].value;
+
+    // Need to store the current word searched
+    this.props.storeSearchWord(researchString);
+
+    // Transition to the "results page"
+    this.props.history.push(route.RESULTS)
   };
 
   handleOnFocusInput = (event) => {
@@ -55,9 +62,12 @@ class SearchBar extends Component {
     const transitionClass = this.state.focusWithinDiv
       ? styles.searchButton_translate
       : styles.searchButton_normal;
+
+    const searchbarSize = this.props.isSmall ? styles.small : styles.accessibility;
+
     return (
       <div
-        className={styles.searchbarContainer}
+        className={[searchbarSize, styles.searchbarContainer].join(" ")}
         onFocus={() => this.handleOnFocusDiv()}
         onBlur={() => this.handleOnBlurDiv()}
       >
@@ -84,4 +94,10 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+const mapDispatchToProps = dispatch => {
+  return {
+    storeSearchWord: (value) => dispatch(actionTypes.storeSearchWord({searchWord: value}))
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(SearchBar));

@@ -4,6 +4,8 @@ import SearchBar from "../../../components/SearchBar/SearchBar";
 import messages from "../../../constants/Messages";
 import searchIcon from "../../../assets/icons/synogramIcon.svg";
 import NavBar from "../../../components/NavBar/Navbar";
+import { connect } from "react-redux";
+import { RESET_REDUX_STATE } from "../../../store/actions/actionTypes";
 
 class HomePage extends React.Component {
   state = {
@@ -18,6 +20,9 @@ class HomePage extends React.Component {
     ) {
       this.setState({ scrollbarVisible: true });
     }
+    
+    // If you return to the homepage. The redux state has to reset.
+    this.props.resetRedux();
   }
   getElementById = (id) => {
     try {
@@ -59,7 +64,7 @@ class HomePage extends React.Component {
               GRAM
             </h1>
           </div>
-          <SearchBar />
+          <SearchBar isSmall = {false}/>
           <div className={styles.homepage_description}>
             <p>{messages.front_page_description}</p>
           </div>
@@ -68,5 +73,10 @@ class HomePage extends React.Component {
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    resetRedux: () => dispatch({type: RESET_REDUX_STATE})
+  }
+}
 
-export default HomePage;
+export default connect(null, mapDispatchToProps)(HomePage);
