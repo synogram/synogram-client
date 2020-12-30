@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./AboutPage.module.scss";
-import MESSAGE from "../../../constants/Messages";
+
+import AboutUs from "./AboutUs/AboutUs.js";
+
 import Profiles from "../../../constants/Profiles.js";
 import emailIcon from "../../../assets/icons/email-logo.svg";
 import githubIcon from "../../../assets/icons/github-logo.svg";
@@ -10,15 +12,6 @@ import Aux from "../../../hoc/auxilary";
 
 class AboutPage extends React.Component {
   render() {
-    const ABOUT_US = (
-      <div className={styles.aboutUs}>
-        <h1>{MESSAGE.about_page_title}</h1>
-        <h2>{MESSAGE.about_page_subtitle}</h2>
-        <p>{MESSAGE.about_page_description1}</p>
-        <p>{MESSAGE.about_page_description2}</p>
-      </div>
-    );
-
     const TEAM = Profiles.map((teamMember, index) => {
       return (
         <div
@@ -68,7 +61,7 @@ class AboutPage extends React.Component {
       <Aux>
         <NavBarWSeachbar isSearchBarHidden={true} />
         <div className={styles.content}>
-          {ABOUT_US}
+          <AboutUs />
           <div className={styles.team}>{TEAM}</div>
         </div>
       </Aux>
