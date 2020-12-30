@@ -1,10 +1,12 @@
+@import "../../../../assets/designs/commonTheme.scss";
+
 .aboutUs {
   display: flex;
   flex-direction: column;
   align-self: center;
   width: 50%;
   letter-spacing: -0.4px;
-  color: #5f5f5f;
+  color: $aboutPageFontColour;
   h1 {
     align-self: center;
   }
