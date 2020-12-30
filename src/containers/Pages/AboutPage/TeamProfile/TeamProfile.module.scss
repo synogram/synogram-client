@@ -9,23 +9,18 @@
 
 .magnifyGlassContainer {
   margin: 1vw;
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
-  align-content: flex-start;
-  width: 17vw;
-  height: 500px;
+  align-content: center;
+  width: 15vw;
+  height: 30rem;
   z-index: 80;
 
   .magnifyGlass {
-    align-self: center;
     position: relative;
     border: 0.5vw solid white;
     border-radius: 50%;
-    width: 15vw;
-    height: 15vw;
+    height: auto;
     z-index: 86;
 
     .imgAvatar {
