@@ -18,17 +18,7 @@
   width: 17vw;
   height: 500px;
   z-index: 80;
-  &:hover .imgAvatar {
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
-  }
-  &:hover .magnifyGlassHandle {
-    filter: blur(1px);
-    -webkit-filter: blur(1px);
-  }
-  &:hover .magnifyGlass .logoAvatarContainer .avatarIcon {
-    visibility: visible;
-  }
+
   .magnifyGlass {
     align-self: center;
     position: relative;
@@ -37,13 +27,24 @@
     width: 15vw;
     height: 15vw;
     z-index: 86;
+
     .imgAvatar {
       border-radius: 50%;
       height: 100%;
       width: 100%;
       z-index: 90;
     }
+
+    &:hover .imgAvatar {
+      filter: blur(4px);
+      -webkit-filter: blur(4px);
+    }
+    &:hover .magnifyGlassHandle {
+      filter: blur(1px);
+      -webkit-filter: blur(1px);
+    }
   }
+
   .magnifyGlassHandle {
     height: 0.5vw;
     width: 25%;
@@ -55,14 +56,11 @@
     border-radius: 15%;
   }
 
-  &:hover .magnifyGlass {
+  &:hover.magnifyGlass {
     transition: border-width 0.2s ease-in-out;
     border: 0.7vw solid white;
   }
-  &:hover .magnifyGlassHandle {
-    transition: border-width 0.2s ease-in-out;
-    border: 0.1vw solid white;
-  }
+
   .teamMemberInfo {
     align-self: flex-end;
     h4 {

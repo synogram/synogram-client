@@ -15,4 +15,8 @@
     align-self: center;
     visibility: hidden;
   }
+
+  &:hover .avatarIcon {
+    visibility: visible;
+  }
 }
