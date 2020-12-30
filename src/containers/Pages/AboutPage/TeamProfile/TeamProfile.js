@@ -1,10 +1,7 @@
 import Profiles from "../../../../constants/Profiles.js";
 import styles from "./TeamProfile.module.scss";
-import Aux from "../../../../hoc/auxilary.js";
 
-import emailIcon from "../../../../assets/icons/email-logo.svg";
-import githubIcon from "../../../../assets/icons/github-logo.svg";
-import linkedinIcon from "../../../../assets/icons/linkedin-logo.svg";
+import TeamProfileLinks from "./TeamProfileLinks/TeamProfileLinks.js";
 
 import React from "react";
 
@@ -21,29 +18,7 @@ const teamProfile = () => {
             alt="test"
             className={styles.imgAvatar}
           ></img>
-          <div className={styles.logoAvatarContainer}>
-            <a href="https://google.ca">
-              <img
-                src={emailIcon}
-                className={styles.avatarIcon}
-                alt="Email Icon"
-              ></img>
-            </a>
-            <a href="https://google.ca">
-              <img
-                src={githubIcon}
-                className={styles.avatarIcon}
-                alt="Github Icon"
-              ></img>
-            </a>
-            <a href="https://google.ca">
-              <img
-                src={linkedinIcon}
-                className={styles.avatarIcon}
-                alt="LinkedIn Icon"
-              ></img>
-            </a>
-          </div>
+          <TeamProfileLinks />
           <div className={styles.magnifyGlassHandle}></div>
         </div>
         <div className={styles.teamMemberInfo}>
