@@ -8,24 +8,28 @@ import React from "react";
 const teamProfile = () => {
   const TEAM = Profiles.map((teamMember, index) => {
     return (
-      <div
-        className={styles.magnifyGlassContainer}
-        key={teamMember.name + index}
-      >
-        <div className={styles.magnifyGlass}>
-          <img
-            src="https://www.w3schools.com/howto/img_avatar.png"
-            alt="test"
-            className={styles.imgAvatar}
-          ></img>
-          <TeamProfileLinks />
-          <div className={styles.magnifyGlassHandle}></div>
+      <React.Fragment>
+        <div className={styles.teamProfile}>
+          <div
+            className={styles.magnifyGlassContainer}
+            key={teamMember.name + index}
+          >
+            <div className={styles.magnifyGlass}>
+              <img
+                src="https://www.w3schools.com/howto/img_avatar.png"
+                alt="test"
+                className={styles.imgAvatar}
+              ></img>
+              <TeamProfileLinks />
+              <div className={styles.magnifyGlassHandle}></div>
+            </div>
+          </div>
+          <div className={styles.teamMemberInfo}>
+            <h4>{teamMember.name}</h4>
+            <p>{teamMember.description}</p>
+          </div>
         </div>
-        <div className={styles.teamMemberInfo}>
-          <h4>{teamMember.name}</h4>
-          <p>{teamMember.description}</p>
-        </div>
-      </div>
+      </React.Fragment>
     );
   });
 
