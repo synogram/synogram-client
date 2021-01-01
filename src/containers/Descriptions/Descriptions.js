@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./Descriptions.module.scss";
 
 import DescriptionButtons from "../Descriptions/DescriptionButtons/DescriptionButtons.js";
+import UpChevron from "../../assets/icons/descriptionModalUpChevron.svg";
 
 const TESTWORDS = [
   "aug",
@@ -47,7 +48,7 @@ class Descriptions extends Component {
           className={styles.mainDescriptionExpandBtn}
           onClick={this.scrollToView}
         >
-          ^
+          <img src={UpChevron} alt="^"></img>
         </button>
         <div className={styles.wordList}>
           <DescriptionButtons wordListArr={WORD_LIST} />
