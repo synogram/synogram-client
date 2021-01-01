@@ -32,8 +32,12 @@ class ResultsPage extends React.Component {
         {this.props.searchWord &&
           this.props.relatedWords.length > 0 &&
           !this.props.loading && (
-            <TreeGraph relatedWords={this.props.relatedWords} />
+            <div className={styles.resultsContent}>
+              <TreeGraph relatedWords={this.props.relatedWords} />
+              <GraphSelection />
+            </div>
           )}
+
         {this.props.error && <Error />}
       </div>
     );
