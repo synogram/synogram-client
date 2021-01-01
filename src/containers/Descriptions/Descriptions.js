@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Descriptions.module.scss";
 
-import DescriptionButtons from "../Descriptions/DescriptionButtons/DescriptionButtons.js";
+import DescriptionWordListBtns from "./DescriptionWordListBtns/DescriptionButtons.js";
+import DescriptionWordInfo from "./DescriptionWordInfo/DescriptionWordInfo.js";
 import UpChevron from "../../assets/icons/descriptionModalUpChevron.svg";
 
 const TESTWORDS = [
@@ -31,11 +32,30 @@ class Descriptions extends Component {
   constructor(props) {
     super(props);
     this.myRef = React.createRef();
+    this.scrollToView = this.scrollToView.bind(this);
+    this.state = {
+      isWordListClicked: false,
+    };
+    this.buttonHandler = this.buttonHandler.bind(this);
+    this.flipImage = this.flipImage.bind(this);
   }
 
-  scrollToView = () => {
+  scrollToView() {
     this.myRef.current.scrollIntoView({ behavior: "smooth" });
-  };
+  }
+
+  buttonHandler() {
+    this.setState((state) => ({
+      isWordListClicked: !state.isWordListClicked,
+    }));
+    this.scrollToView();
+  }
+
+  flipImage() {
+    return this.state.isWordListClicked
+      ? { transform: "rotate(180deg)" }
+      : null;
+  }
 
   render() {
     const WORD_LIST =
@@ -46,27 +66,20 @@ class Descriptions extends Component {
         <button
           id={"Description_Modal"}
           className={styles.mainDescriptionExpandBtn}
-          onClick={this.scrollToView}
+          onClick={this.buttonHandler}
         >
-          <img src={UpChevron} alt="^"></img>
+          <img src={UpChevron} alt="^" style={this.flipImage()}></img>
         </button>
-        <div className={styles.wordList}>
-          <DescriptionButtons wordListArr={WORD_LIST} />
-        </div>
-        <div className={styles.mainDescriptionItem}>
-          <h1>Test title</h1>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-        </div>
+        {this.state.isWordListClicked && (
+          <div className={styles.collapsibleContent}>
+            <div className={styles.wordList}>
+              <DescriptionWordListBtns wordListArr={WORD_LIST} />
+            </div>
+            <div className={styles.mainDescriptionItem}>
+              <DescriptionWordInfo />
+            </div>
+          </div>
+        )}
       </div>
     );
   }

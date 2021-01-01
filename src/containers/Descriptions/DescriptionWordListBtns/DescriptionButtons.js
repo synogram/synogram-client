@@ -1,8 +1,8 @@
 import React from "react";
 import Aux from "../../../hoc/auxilary.js";
-import styles from "./DescriptionButtons.module.scss";
+import styles from "./DescriptionWordListBtns.module.scss";
 
-const DescriptionButtons = (props) => {
+const DescriptionWordListBtns = (props) => {
   const randomWords = props.wordListArr.map((word, index) => {
     let style = {};
     if (index < 3) {
@@ -15,7 +15,11 @@ const DescriptionButtons = (props) => {
       style = { backgroundColor: "#FFFCEB" };
     }
     return (
-      <button className={styles.wordListButtons} style={style}>
+      <button
+        key={word + index}
+        className={styles.wordListButtons}
+        style={style}
+      >
         {word}
       </button>
     );
@@ -23,4 +27,4 @@ const DescriptionButtons = (props) => {
   return <Aux>{randomWords}</Aux>;
 };
 
-export default DescriptionButtons;
+export default DescriptionWordListBtns;
