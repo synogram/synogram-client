@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styles from "./Descriptions.module.scss";
 
+import DescriptionButtons from "../Descriptions/DescriptionButtons/DescriptionButtons.js";
+
 const TESTWORDS = [
   "aug",
   "aquamarine",
@@ -35,19 +37,9 @@ class Descriptions extends Component {
   };
 
   render() {
-    const randomWords = TESTWORDS.map((word, index) => {
-      let style = {};
-      if (index < 3) {
-        style = { backgroundColor: "#FD5D08" };
-      } else if (index < 6) {
-        style = { backgroundColor: "#FE9B08" };
-      } else if (index < 9) {
-        style = { backgroundColor: "#FFD908" };
-      } else {
-        style = { backgroundColor: "#FFFCEB" };
-      }
-      return <button style={style}>{word}</button>;
-    });
+    const WORD_LIST =
+      TESTWORDS !== undefined || TESTWORDS !== null ? [...TESTWORDS] : []; //TESTWORDS is a place holder for the incoming word list array
+
     return (
       <div className={styles.mainDescriptionBox} ref={this.myRef}>
         <button
@@ -57,7 +49,9 @@ class Descriptions extends Component {
         >
           ^
         </button>
-        <div className={styles.wordList}>{randomWords.slice(0, 15)}</div>
+        <div className={styles.wordList}>
+          <DescriptionButtons wordListArr={WORD_LIST} />
+        </div>
         <div className={styles.mainDescriptionItem}>
           <h1>Test title</h1>
           <p>
