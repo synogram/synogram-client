@@ -36,3 +36,7 @@ $nodeColour: white;
   }
   fill: orange;
 }
+
+:global(.rd3t-label__title) {
+  stroke: white !important;
+}
