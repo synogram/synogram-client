@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./NavItems.module.scss";
-import { Link } from "react-router-dom";
-import { getNavbarPropertyUsingKey } from "../../../utilities/ProjectHelper";
-import { UI_NAVBAR_ITEM, UI_PROPERTIES } from "../../../constants/Constants";
+import {Link} from "react-router-dom";
+import {getNavbarPropertyUsingKey} from "../../../utilities/ProjectHelper";
+import {UI_NAVBAR_ITEM, UI_PROPERTIES} from "../../../constants/Constants";
 
 const NavItems = (props) => {
   const supportedTabs = props.supportedTabs;

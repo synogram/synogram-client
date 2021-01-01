@@ -1,0 +1,103 @@
+@import "../../assets/designs/commonTheme.scss";
+@import "../../assets/designs/trigonometry.module.scss";
+
+// When changing the size of the error notification. You only need to change the size of the width values
+
+$bigHexagonWidth: 200px;
+$bigHexagonHeight: calc(#{$bigHexagonWidth} * #{tan(30deg)});
+$smallHexagonWidth: 180px;
+$smallHexagonHeight: calc(#{$smallHexagonWidth} * #{tan(30deg)});
+
+.error {
+  width: 50rem;
+  margin: 0 auto;
+  height: fit-content;
+  margin-top: 30vh;
+}
+
+.errorImage {
+  width: $bigHexagonWidth;
+  height: calc(#{$bigHexagonHeight} * 2);
+  margin: auto;
+}
+
+.outerHexagon {
+  position: absolute;
+  //   Ratio: width x tan(30 degrees) = height
+  width: $bigHexagonWidth;
+  height: $bigHexagonHeight;
+  background: white;
+  margin: calc(#{$bigHexagonHeight / 2}) auto;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-left: calc(#{$bigHexagonWidth / 2}) solid transparent;
+    border-right: calc(#{$bigHexagonWidth / 2}) solid transparent;
+  }
+
+  &::before {
+    bottom: 100%;
+    border-bottom: calc(#{$bigHexagonHeight / 2}) solid white;
+  }
+  &::after {
+    top: 100%;
+    border-top: calc(#{$bigHexagonHeight / 2}) solid white;
+  }
+}
+
+.innerHexagon {
+  position: absolute;
+  width: $smallHexagonWidth;
+  height: $smallHexagonHeight;
+  background: $resultsBGColour;
+  margin: calc(
+      #{$bigHexagonHeight / 2} + #{#{$bigHexagonHeight / 2} - #{$smallHexagonHeight /
+        2}}
+    )
+    auto;
+  margin-left: calc(#{$bigHexagonWidth - $smallHexagonWidth} / 2);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-left: calc(#{$smallHexagonWidth / 2}) solid transparent;
+    border-right: calc(#{$smallHexagonWidth / 2}) solid transparent;
+  }
+
+  &::before {
+    bottom: 100%;
+    border-bottom: calc(#{$smallHexagonHeight / 2}) solid $resultsBGColour;
+  }
+  &::after {
+    top: 100%;
+    border-top: calc(#{$smallHexagonHeight / 2}) solid $resultsBGColour;
+  }
+}
+
+.i {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: white;
+  font-size: 13rem;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 2rem;
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.message {
+  width: 50rem;
+  color: white;
+  font-size: large;
+  text-align: center;
+}
