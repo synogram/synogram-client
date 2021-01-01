@@ -2,32 +2,9 @@ import React, {Component} from "react";
 import Tree from "react-d3-tree";
 import styles from "./TreeGraph.module.scss";
 import "./Node.module.scss";
-const myTreeData = [
-  {
-    name: "Top Level",
-    attributes: {
-      keyA: "val A",
-      keyB: "val B",
-      keyC: "val C",
-    },
-    children: [
-      {
-        name: "Level 2: A",
-        attributes: {
-          keyA: "val A",
-          keyB: "val B",
-          keyC: "val C",
-        },
-      },
-      {
-        name: "Level 2: B",
-      },
-    ],
-  },
-];
 
 class TreeGraph extends Component {
-  state = {translate: {x: 0, y: 0}};
+  state = {translate: {x: 0, y: 0}, reload: false};
 
   componentDidMount() {
     const dimensions = this.treeContainer.getBoundingClientRect();
@@ -39,6 +16,7 @@ class TreeGraph extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {}
   render() {
     return (
       <div
@@ -46,13 +24,14 @@ class TreeGraph extends Component {
         ref={(tc) => (this.treeContainer = tc)}
       >
         <Tree
-          data={myTreeData}
+          data={this.props.relatedWords}
           translate={this.state.translate}
           pathFunc="straight"
           rootNodeClassName="node__root"
           branchNodeClassName="node__branch"
           leafNodeClassName="node__leaf"
           zoomable={false}
+          onNodeClick={(nodeValue, event) => {}}
         />
       </div>
     );

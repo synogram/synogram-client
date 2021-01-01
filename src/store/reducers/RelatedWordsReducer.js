@@ -9,9 +9,22 @@ const initialState = {
 const RelatedWordsReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_RELATED_WORDS_BEGIN:
-      return {...state, loading: true, error: null};
+      const rootNode = [
+        {
+          name: action.searchWord,
+        },
+      ];
+      return {...state, loading: true, error: null, relatedWords: rootNode};
     case actionTypes.GET_RELATED_WORDS_SUCCESS:
-      return {...state, loading: false, relatedWords: action.res};
+      const words = action.res.map((element) => {
+        return {
+          name: element,
+        };
+      });
+
+      const relatedWords = state.relatedWords;
+      relatedWords[0].children = words;
+      return {...state, loading: false, relatedWords: relatedWords};
     case actionTypes.GET_RELATED_WORDS_FAILURE:
       return {...state, loading: false, error: action.err};
     default:

@@ -29,18 +29,12 @@ class ResultsPage extends React.Component {
     return (
       <div className={styles.container}>
         <NavBarWSeachbar />
-        {/* {!this.props.searchWord && <div>No word searched. Try again.</div>} */}
-        {/* {this.props.searchWord &&
-          this.props.relatedWords.length < 1 &&
-          this.props.loading && <Loading />} */}
-        {/* {this.props.relatedWords.length > 0 && !this.props.loading && (
-          
-        )} */}
-        <div>
-          {/* <GraphSelection /> */}
-          <TreeGraph />
-        </div>
-        {/* {this.props.error && <Error />} */}
+        {this.props.searchWord &&
+          this.props.relatedWords.length > 0 &&
+          !this.props.loading && (
+            <TreeGraph relatedWords={this.props.relatedWords} />
+          )}
+        {this.props.error && <Error />}
       </div>
     );
   }

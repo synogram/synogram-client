@@ -3,7 +3,7 @@ import {getRelatedWordsAPI} from "../../utilities/apiHandler";
 
 export const getRelatedWords = (payload) => {
   return (dispatch) => {
-    dispatch(getRelatedWordsBegin());
+    dispatch(getRelatedWordsBegin(payload));
 
     return getRelatedWordsAPI(payload)
       .then((res) => {
@@ -16,9 +16,10 @@ export const getRelatedWords = (payload) => {
   };
 };
 
-const getRelatedWordsBegin = () => {
+const getRelatedWordsBegin = (searchword) => {
   return {
     type: actionType.GET_RELATED_WORDS_BEGIN,
+    searchWord: searchword,
   };
 };
 
