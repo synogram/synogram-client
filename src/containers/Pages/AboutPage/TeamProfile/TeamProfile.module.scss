@@ -1,0 +1,78 @@
+.team {
+  width: 65%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.teamProfile {
+  width: 15rem;
+  margin: 1rem;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: center;
+
+  & .magnifyGlassContainer {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 15rem;
+    height: 15rem;
+    z-index: 80;
+
+    .magnifyGlass {
+      position: relative;
+      border: 0.5vw solid white;
+      border-radius: 50%;
+      height: 100%;
+      z-index: 86;
+
+      .imgAvatar {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        z-index: 90;
+      }
+
+      &:hover .imgAvatar {
+        filter: blur(4px);
+        -webkit-filter: blur(4px);
+      }
+      &:hover .magnifyGlassHandle {
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
+      }
+
+      .magnifyGlassHandle {
+        height: 0.5vw;
+        width: 25%;
+        background-color: white;
+        transform: rotate(50deg);
+        position: absolute;
+        z-index: 0;
+        left: 75%;
+        border-radius: 15%;
+        margin: 0;
+      }
+    }
+
+    &:hover .magnifyGlass {
+      transition: border-width 0.2s ease-in-out;
+      border: 0.7vw solid white;
+    }
+  }
+
+  & .teamMemberInfo {
+    width: 100%;
+    h4 {
+      text-align: center;
+      margin-bottom: 0.5vw;
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+}
