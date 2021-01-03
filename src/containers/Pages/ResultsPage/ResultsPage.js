@@ -22,10 +22,7 @@ class ResultsPage extends React.Component {
   generateSearchWordData() {
     this.props.getRelatedWord(this.props.searchWord);
     this.props.getSummary(this.props.searchWord);
-<<<<<<< HEAD
     this.props.getWordDictionary(this.props.searchWord);
-=======
->>>>>>> 583b985627c8f2bf67b2a5a3387bf018c2c796b8
   }
 
   render() {
@@ -33,12 +30,6 @@ class ResultsPage extends React.Component {
       <div className={styles.container}>
         <NavBarWSeachbar />
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
-<<<<<<< HEAD
-        {this.props.searchWord && this.props.relatedWords.length < 1 && this.props.loading && <div>Loading...</div>}
-        {this.props.relatedWords.length > 0 && !this.props.loading && <div>Loaded</div>}
-        {this.props.error && <div>error</div>}
-        {!this.props.dictionaryLoading && <GraphSelection/>}
-=======
         {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
           this.props.loading && <Loading />}
@@ -48,7 +39,6 @@ class ResultsPage extends React.Component {
           </div>
         )}
         {this.props.error && <Error />}
->>>>>>> 583b985627c8f2bf67b2a5a3387bf018c2c796b8
       </div>
     );
   }
@@ -60,27 +50,17 @@ const mapStateToProps = (state) => {
     loading: state.related.loading,
     relatedWords: state.related.relatedWords,
     error: state.related.error,
-<<<<<<< HEAD
     dictionaryLoading: state.dictionary.loading,
-  }
-}
-=======
   };
 };
->>>>>>> 583b985627c8f2bf67b2a5a3387bf018c2c796b8
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getRelatedWord: (value) => dispatch(actionTypes.getRelatedWords(value)),
     getSummary: (value) => dispatch(actionTypes.getSummary(value)),
-<<<<<<< HEAD
-    getWordDictionary: (value) => dispatch(actionTypes.getWordDictionary(value))
-  }
-}
-
-=======
+    getWordDictionary: (value) =>
+      dispatch(actionTypes.getWordDictionary(value)),
   };
 };
->>>>>>> 583b985627c8f2bf67b2a5a3387bf018c2c796b8
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultsPage);
