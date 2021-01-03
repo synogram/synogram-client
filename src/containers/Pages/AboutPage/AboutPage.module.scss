@@ -1,0 +1,16 @@
+@import "../../../assets/designs/commonTheme.scss";
+
+.content {
+  background-color: $backgroundColor;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  color: $aboutPageFontColour;
+  letter-spacing: -0.4px;
+}
