@@ -13,4 +13,9 @@ export const getRelatedWordsAPI = (params) => {
   return axios.get("/api/query/" + QUERY);
 };
 
-export const getDictionaryDefinitionAPI = (params) => {};
+export const getDictionaryDefinitionAPI = (params) => {
+  const QUERY_SEARCHWORD = params;
+  const QUERY_LANG = 'en';
+  return axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${QUERY_LANG}/${QUERY_SEARCHWORD}`)
+}
+
