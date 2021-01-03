@@ -23,6 +23,7 @@ class ResultsPage extends React.Component {
   generateSearchWordData() {
     this.props.getRelatedWord(this.props.searchWord);
     this.props.getSummary(this.props.searchWord);
+    this.props.getWordDictionary(this.props.searchWord);
   }
 
   render() {
@@ -50,6 +51,7 @@ const mapStateToProps = (state) => {
     loading: state.related.loading,
     relatedWords: state.related.relatedWords,
     error: state.related.error,
+    dictionaryLoading: state.dictionary.loading,
   };
 };
 
@@ -57,6 +59,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getRelatedWord: (value) => dispatch(actionTypes.getRelatedWords(value)),
     getSummary: (value) => dispatch(actionTypes.getSummary(value)),
+    getWordDictionary: (value) =>
+      dispatch(actionTypes.getWordDictionary(value)),
   };
 };
 
