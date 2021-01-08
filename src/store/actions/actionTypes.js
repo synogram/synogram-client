@@ -11,6 +11,10 @@ export const GET_RELATED_WORDS_BEGIN = "getRelatedWordsBegin";
 export const GET_RELATED_WORDS_SUCCESS = "getRelatedWordsSuccess";
 export const GET_RELATED_WORDS_FAILURE = "getRelatedWordsFailure";
 
+export const ADD_RELATED_WORDS_BEGIN = "addRelatedWordsBegin";
+export const ADD_RELATED_WORDS_SUCCESS = "addRelatedWordsSuccess";
+export const ADD_RELATED_WORDS_FAILURE = "addRelatedWordsFailure";
+
 // Summary Reducer
 export const GET_WORD_SUMMARY_BEGIN = "getWordSummaryBegin";
 export const GET_WORD_SUMMARY_SUCCESS = "getWordSummarySuccess";

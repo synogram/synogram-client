@@ -36,3 +36,39 @@ const getRelatedWordsFailure = (err) => {
     err: err,
   };
 };
+
+export const addRelatedWords = (payload) => {
+  return (dispatch) => {
+    dispatch(addRelatedWordsBegin());
+
+    return getRelatedWordsAPI(payload)
+      .then((res) => {
+        const data = res.data.words ? res.data.words : [];
+        dispatch(addRelatedWordsSuccess(data, payload));
+      })
+      .catch((err) => {
+        dispatch(addRelatedWordsFailure(err));
+      });
+  };
+};
+
+const addRelatedWordsBegin = () => {
+  return {
+    type: actionType.ADD_RELATED_WORDS_BEGIN,
+  };
+};
+
+const addRelatedWordsSuccess = (data, searchWord) => {
+  return {
+    type: actionType.ADD_RELATED_WORDS_SUCCESS,
+    res: data,
+    searchWord: searchWord,
+  };
+};
+
+const addRelatedWordsFailure = (err) => {
+  return {
+    type: actionType.ADD_RELATED_WORDS_FAILURE,
+    err: err,
+  };
+};
