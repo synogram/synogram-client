@@ -18,7 +18,7 @@ class TreeGraph extends Component {
     console.log(this.state.translate);
   }
 
-  componentDidUpdate(prevProps, prevState) {}
+  componentDidUpdate(prevProps, prevState) {} 
   render() {
     console.log(this.state.translate);
     console.log(this.props.relatedWords);
