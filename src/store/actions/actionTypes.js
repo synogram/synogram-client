@@ -3,6 +3,7 @@ export const RESET_REDUX_STATE = "resetReduxState";
 
 // General Reducer
 export const STORE_SEARCH_WORD = "storeSearchWord";
+export const STORE_INITIAL_SEARCH_WORD = "storeInitialSearchWord";
 export const PUSH_SEARCH_WORD = "pushSearchWord";
 export const POP_SEARCH_WORD = "popSearchWord";
 

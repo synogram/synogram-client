@@ -33,6 +33,7 @@ class TreeGraph extends Component {
           leafNodeClassName="node__leaf"
           zoomable={true}
           onNodeClick={(nodeValue, event) => {
+            this.props.storeSearchWord(nodeValue.name);
             this.props.addRelatedWord(nodeValue.name);
             this.props.getSummary(nodeValue.name);
             this.props.getWordDictionary(nodeValue.name);
@@ -48,6 +49,8 @@ const mapDispatchToProps = (dispatch) => {
     getSummary: (value) => dispatch(actionTypes.getSummary(value)),
     getWordDictionary: (value) =>
       dispatch(actionTypes.getWordDictionary(value)),
+    storeSearchWord: (value) =>
+      dispatch(actionTypes.storeSearchWord({searchWord: value})),
   };
 };
 export default connect(null, mapDispatchToProps)(TreeGraph);

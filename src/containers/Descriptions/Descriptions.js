@@ -4,6 +4,7 @@ import styles from "./Descriptions.module.scss";
 import DescriptionWordListBtns from "./DescriptionWordListBtns/DescriptionButtons.js";
 import DescriptionWordInfo from "./DescriptionWordInfo/DescriptionWordInfo.js";
 import UpChevron from "../../assets/icons/descriptionModalUpChevron.svg";
+import {connect} from "react-redux";
 
 const TESTWORDS = [
   "aug",
@@ -57,7 +58,9 @@ class Descriptions extends Component {
 
   render() {
     const WORD_LIST =
-      TESTWORDS !== undefined || TESTWORDS !== null ? [...TESTWORDS] : []; //TESTWORDS is a place holder for the incoming word list array
+      this.props.relatedWords !== undefined || this.props.relatedWords !== null
+        ? [...this.props.relatedWords]
+        : []; //TESTWORDS is a place holder for the incoming word list array
 
     return (
       <div className={styles.mainDescriptionBox} ref={this.myRef}>
@@ -83,4 +86,10 @@ class Descriptions extends Component {
   }
 }
 
-export default Descriptions;
+const mapStateToProps = (state) => {
+  return {
+    relatedWords: state.related.relatedWords,
+  };
+};
+
+export default connect(mapStateToProps)(Descriptions);

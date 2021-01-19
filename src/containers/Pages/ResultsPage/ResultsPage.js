@@ -18,7 +18,7 @@ class ResultsPage extends React.Component {
   }
 
   componentDidUpdate(prevprops, prevState) {
-    if (prevprops.searchWord !== this.props.searchWord) {
+    if (prevprops.initialSearchWord !== this.props.initialSearchWord) {
       this.generateSearchWordData();
     }
   }
@@ -54,6 +54,7 @@ class ResultsPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     searchWord: state.general.searchWord,
+    initialSearchWord: state.general.initialSearchWord,
     loading: state.related.loading,
     relatedWords: state.related.relatedWordsTree,
     error: state.related.error,

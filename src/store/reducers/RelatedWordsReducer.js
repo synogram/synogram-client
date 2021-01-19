@@ -29,7 +29,7 @@ const RelatedWordsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         relatedWordsTree: relatedWordsTree,
-        relatedWords: words,
+        relatedWords: action.res,
       };
 
     case actionTypes.GET_RELATED_WORDS_FAILURE:
@@ -54,7 +54,7 @@ const RelatedWordsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         relatedWordsTree: relatedWordsCopy,
-        relatedWords: childrenWords,
+        relatedWords: action.res,
       };
 
     case actionTypes.ADD_RELATED_WORDS_FAILURE:

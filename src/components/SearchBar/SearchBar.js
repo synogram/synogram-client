@@ -10,7 +10,7 @@ import route from "../../constants/Routes";
 class SearchBar extends Component {
   state = {
     focusWithinDiv: false,
-    input: ""
+    input: "",
   };
 
   searchInputId = "search_input";
@@ -27,14 +27,14 @@ class SearchBar extends Component {
   handleInput = (event) => {
     event.preventDefault();
     this.setState({input: event.target.value});
-  }
+  };
 
   handleOnEnter = (event) => {
     event.preventDefault();
     const researchString = event.target[0].value;
 
     // Need to store the current word searched
-    this.props.storeSearchWord(researchString);
+    this.props.storeInitialSearchWord(researchString);
 
     // Transition to the "results page"
     this.props.history.push(route.RESULTS);
@@ -100,8 +100,8 @@ class SearchBar extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    storeSearchWord: (value) =>
-      dispatch(actionTypes.storeSearchWord({searchWord: value})),
+    storeInitialSearchWord: (value) =>
+      dispatch(actionTypes.storeInitialSearchWord({searchWord: value})),
   };
 };
 
