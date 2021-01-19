@@ -1,5 +1,12 @@
 .treeGraphContainer {
-  height: 80vh;
+  height: 100%;
   width: 100%;
   border: 2px solid white;
+  flex-direction: column;
+  display: flex;
+}
+.guide {
+  color: white;
+  justify-self: flex-end;
+  text-align: end;
 }

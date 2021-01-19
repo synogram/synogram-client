@@ -39,6 +39,9 @@ class TreeGraph extends Component {
             this.props.getWordDictionary(nodeValue.name);
           }}
         />
+        <span className={styles.guide}>
+          Interact with graph: click and drag
+        </span>
       </div>
     );
   }
