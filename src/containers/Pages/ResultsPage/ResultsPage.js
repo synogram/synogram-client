@@ -34,6 +34,9 @@ class ResultsPage extends React.Component {
       <div className={styles.container}>
         <NavBarWSeachbar />
         {this.props.searchWord &&
+          this.props.relatedWords.length < 1 &&
+          this.props.loading && <Loading />}
+        {this.props.searchWord &&
           this.props.relatedWords.length > 0 &&
           !this.props.loading && (
             <div className={styles.resultsContent}>
