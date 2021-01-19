@@ -30,19 +30,18 @@ class ResultsPage extends React.Component {
 
   render() {
     return (
-
       <div className={styles.container}>
         <NavBarWSeachbar />
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
         {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
-
           this.props.loading && <Loading />}
         {this.props.relatedWords.length > 0 && !this.props.loading && (
           <div>
             <GraphSelection />
           </div>
         )}
+        <Descriptions />
         {this.props.error && <Error />}
       </div>
     );
