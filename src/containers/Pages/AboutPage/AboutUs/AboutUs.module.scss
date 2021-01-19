@@ -1,0 +1,17 @@
+@import "../../../../assets/designs/commonTheme.scss";
+
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 50%;
+  letter-spacing: -0.4px;
+  color: $aboutPageFontColour;
+  h1 {
+    align-self: center;
+  }
+  h2 {
+    align-self: center;
+    letter-spacing: -1.02px;
+  }
+}

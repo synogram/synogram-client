@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./ResultsPage.module.scss";
 import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
-import { connect } from "react-redux";
+
+import Descriptions from "../../Descriptions/Descriptions";
+import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
 import GraphSelection from "../../../components/GraphSelection/GraphSelection";
-import Descriptions from "../../Descriptions/Descriptions";
+import Loading from "../../../components/Loading/Loading";
+import Error from "../../../components/Error/Error";
 
 class ResultsPage extends React.Component {
   componentDidMount() {
@@ -22,22 +25,25 @@ class ResultsPage extends React.Component {
   generateSearchWordData() {
     this.props.getRelatedWord(this.props.searchWord);
     this.props.getSummary(this.props.searchWord);
+    this.props.getWordDictionary(this.props.searchWord);
   }
 
   render() {
     return (
-      <div>
+
+      <div className={styles.container}>
         <NavBarWSeachbar />
         {!this.props.searchWord && <div>No word searched. Try again.</div>}
         {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
-          this.props.loading && <div>Loading...</div>}
+
+          this.props.loading && <Loading />}
         {this.props.relatedWords.length > 0 && !this.props.loading && (
-          <div>Loaded</div>
+          <div>
+            <GraphSelection />
+          </div>
         )}
-        {this.props.error && <div>error</div>}
-        <GraphSelection />
-        <Descriptions />
+        {this.props.error && <Error />}
       </div>
     );
   }
@@ -49,6 +55,7 @@ const mapStateToProps = (state) => {
     loading: state.related.loading,
     relatedWords: state.related.relatedWords,
     error: state.related.error,
+    dictionaryLoading: state.dictionary.loading,
   };
 };
 
@@ -56,6 +63,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getRelatedWord: (value) => dispatch(actionTypes.getRelatedWords(value)),
     getSummary: (value) => dispatch(actionTypes.getSummary(value)),
+    getWordDictionary: (value) =>
+      dispatch(actionTypes.getWordDictionary(value)),
   };
 };
 
