@@ -1,0 +1,34 @@
+.mainDescriptionBox {
+  background: #cccccc 0% 0% no-repeat padding-box;
+  border-radius: 2.5vw 2.5vw 0 0;
+  opacity: 0.69;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  .mainDescriptionExpandBtn {
+    width: 100%;
+    height: 3vw;
+    background-color: transparent;
+    img {
+      height: 35%;
+    }
+  }
+
+  .collapsibleContent {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    .wordList {
+      width: 25%;
+      flex-flow: row wrap;
+      align-content: flex-start;
+      margin-bottom: 3vw;
+    }
+    .mainDescriptionItem {
+      width: 65%;
+      text-align: left;
+    }
+  }
+}
