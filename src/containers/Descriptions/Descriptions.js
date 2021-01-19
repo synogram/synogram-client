@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import styles from "./Descriptions.module.scss";
 
 import DescriptionWordListBtns from "./DescriptionWordListBtns/DescriptionButtons.js";
@@ -41,7 +41,7 @@ class Descriptions extends Component {
   }
 
   scrollToView() {
-    this.myRef.current.scrollIntoView({ behavior: "smooth" });
+    this.myRef.current.scrollIntoView({behavior: "smooth"});
   }
 
   buttonHandler() {
@@ -52,9 +52,7 @@ class Descriptions extends Component {
   }
 
   flipImage() {
-    return this.state.isWordListClicked
-      ? { transform: "rotate(180deg)" }
-      : null;
+    return this.state.isWordListClicked ? {transform: "rotate(180deg)"} : null;
   }
 
   render() {

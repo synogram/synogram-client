@@ -8,7 +8,7 @@ export const getSummaryAPI = (params) => {
 
 export const getRelatedWordsAPI = (params) => {
   const QUERY_SEARCHWORD = params;
-  const QUERY_QUANTITY = 5;
+  const QUERY_QUANTITY = 15;
   const QUERY = QUERY_SEARCHWORD + "/" + QUERY_QUANTITY;
   return axios.get("/api/query/" + QUERY);
 };

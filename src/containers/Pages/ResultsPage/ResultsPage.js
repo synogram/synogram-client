@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
   return {
     searchWord: state.general.searchWord,
     loading: state.related.loading,
-    relatedWords: state.related.relatedWords,
+    relatedWords: state.related.relatedWordsTree,
     error: state.related.error,
     dictionaryLoading: state.dictionary.loading,
   };
