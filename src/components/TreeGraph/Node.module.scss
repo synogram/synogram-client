@@ -1,42 +1,12 @@
-$nodeColour: white;
-
-:global(.node__root > circle) {
-  r: 2rem;
-  border: $nodeColour 4px solid;
-  border-radius: 50%;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: border-width 0.2s ease-in;
-  &:hover {
-    border: $nodeColour 8px solid;
-  }
-  fill: red;
-}
-:global(.node__branch > circle) {
-  r: 2rem;
-  border: $nodeColour 4px solid;
-  border-radius: 50%;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition: border-width 0.2s ease-in;
-  &:hover {
-    border: $nodeColour 8px solid;
-  }
-  fill: blue;
-}
+:global(.node__root > circle),
+:global(.node__branch > circle),
 :global(.node__leaf > circle) {
   r: 2rem;
-  border: $nodeColour 4px solid;
-  border-radius: 50%;
   cursor: pointer;
-  box-sizing: border-box;
-  transition: border-width 0.2s ease-in;
-  &:hover {
-    border: $nodeColour 8px solid;
-  }
-  fill: orange;
+  stroke: white !important;
 }
 
-:global(.rd3t-label__title) {
+:global(.rd3t-label__title),
+:global(.rd3t-link) {
   stroke: white !important;
 }
