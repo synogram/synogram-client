@@ -1,11 +1,14 @@
 import React from "react";
 import styles from "./ResultsPage.module.scss";
 import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
+
+import Descriptions from "../../Descriptions/Descriptions";
 import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
 import GraphSelection from "../../../components/GraphSelection/GraphSelection";
 import Loading from "../../../components/Loading/Loading";
 import Error from "../../../components/Error/Error";
+
 class ResultsPage extends React.Component {
   componentDidMount() {
     if (this.props.searchWord) {
@@ -38,6 +41,7 @@ class ResultsPage extends React.Component {
             <GraphSelection />
           </div>
         )}
+        <Descriptions />
         {this.props.error && <Error />}
       </div>
     );
