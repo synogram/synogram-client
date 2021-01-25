@@ -7,10 +7,12 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
     "jest-canvas-mock": "^2.3.0",
     "node-sass": "^4.14.1",
+    "puppeteer": "^5.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-plotly.js": "^2.5.0",
@@ -19,13 +21,15 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "serve": "^11.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "percy exec -- react-scripts test",
+    "eject": "react-scripts eject",
+    "test:visuals": "percy exec -- jest --config integration/jest.config.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,7 +47,10 @@
     ]
   },
   "devDependencies": {
-    "enzyme": "^3.11.0"
+    "@percy/cypress": "^2.3.4",
+    "@percy/puppeteer": "^1.1.0",
+    "enzyme": "^3.11.0",
+    "jest-puppeteer": "^4.4.0"
   },
   "prettier": {
     "tabWidth": 2,
