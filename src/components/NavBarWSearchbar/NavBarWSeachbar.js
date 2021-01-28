@@ -17,7 +17,9 @@ const NavBarWSeachbar = (props) => {
           onClickIcon();
         }}
       />
-      <SearchBar isSmall={true} styles={styles.searchbar} />
+      {props.isSearchBarHidden ? null : (
+        <SearchBar isSmall={true} styles={styles.searchbar} />
+      )}
     </div>
   );
 };
