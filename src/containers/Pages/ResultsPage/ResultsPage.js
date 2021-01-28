@@ -38,7 +38,8 @@ class ResultsPage extends React.Component {
           this.props.loading && <Loading />}
         {this.props.searchWord &&
           this.props.relatedWords.length > 0 &&
-          !this.props.loading && (
+          !this.props.loading &&
+          !this.props.error && (
             <div className={styles.resultsContent}>
               <TreeGraph relatedWords={this.props.relatedWords} />
               <GraphSelection />
@@ -56,7 +57,7 @@ const mapStateToProps = (state) => {
     searchWord: state.general.searchWord,
     initialSearchWord: state.general.initialSearchWord,
     loading: state.related.loading,
-    relatedWords: state.related.relatedWordsTree,
+    relatedWords: state.related.relatedWords,
     error: state.related.error,
     dictionaryLoading: state.dictionary.loading,
   };
