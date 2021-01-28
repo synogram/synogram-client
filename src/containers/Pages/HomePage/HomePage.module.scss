@@ -20,8 +20,11 @@
   margin: 0 auto;
 
   & .homepage_description {
-    font-size: 12px;
     width: 50%;
+
+    & p {
+      font-size: 14px;
+    }
   }
 
   & .homepage_navbar {
