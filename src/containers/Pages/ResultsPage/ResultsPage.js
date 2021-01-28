@@ -32,7 +32,7 @@ class ResultsPage extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <NavBarWSeachbar />
+        <NavBarWSeachbar isSearchBarHidden={false} />
         {this.props.searchWord &&
           this.props.relatedWords.length < 1 &&
           this.props.loading && <Loading />}
