@@ -7,8 +7,18 @@ const DescriptionWordInfo = (props) => {
     <>
       <h1>{props.searchWord}</h1>
       <div>
-        <p>{props.definition}</p>
-        <p>{props.description}</p>
+        {props.definition && (
+          <div className={styles.text}>
+            <label>Definition:</label>
+            <p>{props.definition}</p>
+          </div>
+        )}
+        {props.description && (
+          <div className={styles.text}>
+            <label>Description:</label>
+            <p>{props.description}</p>
+          </div>
+        )}
       </div>
     </>
   );
