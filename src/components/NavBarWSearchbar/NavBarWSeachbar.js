@@ -1,7 +1,6 @@
 import React from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./NavBarWSeachbar.module.scss";
-import icon from "../../assets/icons/synogramIcon.svg";
 import {withRouter} from "react-router-dom";
 import Logo from "../Logo/Logo";
 const NavBarWSeachbar = (props) => {

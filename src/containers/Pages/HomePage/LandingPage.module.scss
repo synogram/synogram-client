@@ -1,15 +1,15 @@
 @import "../../../assets/designs/commonTheme.scss";
 
-.homepage {
+.landingPage {
   background-color: $backgroundColor;
-  height: 100%;
+  min-height: 100%;
 }
 
 .synogramIcon {
   width: 100%;
 }
 
-.content_container {
+.content {
   position: relative;
   z-index: 2;
   display: flex;
@@ -19,7 +19,7 @@
   width: 100%;
   margin: 0 auto;
 
-  & .homepage_description {
+  & .landingPageDescription {
     width: 50%;
 
     & p {
@@ -27,20 +27,20 @@
     }
   }
 
-  & .homepage_navbar {
+  & .landingPageNavbar {
     align-self: flex-end;
     margin-right: 15vw;
   }
 }
 
-.magnify_glass_container {
+.magnifyGlass {
   position: absolute;
   width: 125vh;
   height: 125vh;
   right: 0;
   overflow: hidden;
   z-index: 0;
-  & .outer_glass {
+  & .outerGlass {
     background-color: white;
     width: 95%;
     height: 95%;
@@ -51,7 +51,7 @@
     top: 2%;
   }
 
-  & .inner_glass {
+  & .innerGlass {
     background-color: $magnifyCenter;
 
     position: absolute;
@@ -65,7 +65,7 @@
     left: 5%;
   }
 
-  & .glass_handle {
+  & .glassHandle {
     height: 3rem;
     width: 95%;
     background-color: white;

@@ -91,7 +91,7 @@ class SearchBar extends Component {
           />
         </form>
         <button className={[styles.searchButton, transitionClass].join(" ")}>
-          <img src={searchIcon} className={styles.searchIcon} />
+          <img src={searchIcon} alt = "SearchIcon" className={styles.searchIcon} />
         </button>
       </div>
     );

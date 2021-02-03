@@ -6,29 +6,6 @@ import DescriptionWordInfo from "./DescriptionWordInfo/DescriptionWordInfo.js";
 import UpChevron from "../../assets/icons/descriptionModalUpChevron.svg";
 import {connect} from "react-redux";
 
-const TESTWORDS = [
-  "aug",
-  "aquamarine",
-  "tracheae",
-  "fro",
-  "runlet",
-  "mouthpiece",
-  "heterophyte",
-  "nonsuppositive",
-  "retaker",
-  "craunch",
-  "preready",
-  "yeastless",
-  "gulllike",
-  "nonsystematic",
-  "voodooing",
-  "bluebonnet",
-  "gunkholed",
-  "decretory",
-  "listerising",
-  "reassurance",
-];
-
 class Descriptions extends Component {
   constructor(props) {
     super(props);

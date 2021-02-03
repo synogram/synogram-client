@@ -4,7 +4,7 @@
 export const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 export const searchTree = (tree, name, children) => {
-  if (tree.name == name) {
+  if (tree.name === name) {
     return tree;
   } else if (tree.children != null) {
     var i;
