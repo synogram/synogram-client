@@ -17,7 +17,8 @@ class ResultsPage extends React.Component {
     }
   }
 
-  componentDidUpdate(prevprops, prevState) {
+  componentDidUpdate(prevprops) {
+    // When searching again through the nav bar, check if the word searched is different
     if (prevprops.initialSearchWord !== this.props.initialSearchWord) {
       this.generateSearchWordData();
     }
@@ -33,18 +34,11 @@ class ResultsPage extends React.Component {
     return (
       <div className={styles.container}>
         <NavBarWSeachbar isSearchBarHidden={false} />
-        {this.props.searchWord &&
-          this.props.relatedWords.length < 1 &&
-          this.props.loading && <Loading />}
-        {this.props.searchWord &&
-          this.props.relatedWordsTree.length > 0 &&
-          !this.props.loading &&
-          !this.props.error && (
-            <div className={styles.resultsContent}>
-              <TreeGraph relatedWords={this.props.relatedWordsTree} />
-              <GraphSelection />
-            </div>
-          )}
+        {this.props.searchWord && this.props.loading && <Loading />}
+        <div className={styles.resultsContent}>
+          <TreeGraph />
+          <GraphSelection />
+        </div>
         <Descriptions />
         {this.props.error && <Error />}
       </div>

@@ -8,6 +8,7 @@ class TreeGraph extends Component {
   state = {translate: {x: 0, y: 0}, reload: false};
 
   componentDidMount() {
+    
     const dimensions = this.treeContainer.getBoundingClientRect();
     this.setState({
       translate: {
@@ -17,15 +18,15 @@ class TreeGraph extends Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {}
   render() {
+    
     return (
       <div
         className={styles.treeGraphContainer}
         ref={(tc) => (this.treeContainer = tc)}
       >
-        <Tree
-          data={this.props.relatedWords}
+       { !(this.props.relatedWordsTree === undefined || this.props.relatedWordsTree.length == 0) && <Tree
+          data={this.props.relatedWordsTree}
           translate={this.state.translate}
           pathFunc="straight"
           rootNodeClassName="node__root"
@@ -38,14 +39,18 @@ class TreeGraph extends Component {
             this.props.getSummary(nodeValue.name);
             this.props.getWordDictionary(nodeValue.name);
           }}
-        />
-        <span className={styles.guide}>
-          Interact with graph: click and drag
-        </span>
+        />}
       </div>
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    relatedWordsTree: state.related.relatedWordsTree
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addRelatedWord: (value) => dispatch(actionTypes.addRelatedWords(value)),
@@ -56,4 +61,4 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionTypes.storeSearchWord({searchWord: value})),
   };
 };
-export default connect(null, mapDispatchToProps)(TreeGraph);
+export default connect(mapStateToProps, mapDispatchToProps)(TreeGraph);

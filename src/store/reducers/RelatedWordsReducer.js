@@ -2,7 +2,7 @@ import * as actionTypes from "../actions/actionTypes";
 import {searchTree} from "../../utilities/helperFunctions";
 
 const initialState = {
-  relatedWordsTree: [],
+  relatedWordsTree: {},
   relatedWords: [],
   loading: false,
   error: null,
@@ -11,20 +11,18 @@ const initialState = {
 const RelatedWordsReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_RELATED_WORDS_BEGIN:
-      const rootNode = [
-        {
-          name: action.searchWord,
-        },
-      ];
+      const rootNode = {
+          name: action.searchWord
+       };
       return {...state, loading: true, error: null, relatedWordsTree: rootNode};
     case actionTypes.GET_RELATED_WORDS_SUCCESS:
       const words = action.res.map((element) => {
         return {
-          name: element,
+          name: element
         };
       });
-      const relatedWordsTree = state.relatedWordsTree;
-      relatedWordsTree[0].children = words.slice(2, 6);
+      const relatedWordsTree = {...state.relatedWordsTree};
+      relatedWordsTree.children = words.slice(2, 6);
       return {
         ...state,
         loading: false,
@@ -45,8 +43,8 @@ const RelatedWordsReducer = (state = initialState, action) => {
         };
       });
       // Add Element to Tree
-      const relatedWordsCopy = state.relatedWordsTree;
-      const parentNode = searchTree(relatedWordsCopy[0], action.searchWord);
+      const relatedWordsCopy = {...state.relatedWordsTree}
+      const parentNode = searchTree(relatedWordsCopy, action.searchWord);
       parentNode.children = childrenWords.slice(2, 6);
 
       // Add Element to related list
