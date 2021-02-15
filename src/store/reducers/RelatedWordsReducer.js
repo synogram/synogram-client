@@ -15,6 +15,7 @@ const RelatedWordsReducer = (state = initialState, action) => {
           name: action.searchWord
        };
       return {...state, loading: true, error: null, relatedWordsTree: rootNode};
+
     case actionTypes.GET_RELATED_WORDS_SUCCESS:
       const words = action.res.map((element) => {
         return {
@@ -44,8 +45,16 @@ const RelatedWordsReducer = (state = initialState, action) => {
       });
       // Add Element to Tree
       const relatedWordsCopy = {...state.relatedWordsTree}
-      const parentNode = searchTree(relatedWordsCopy, action.searchWord);
-      parentNode.children = childrenWords.slice(2, 6);
+
+      let currentNode = searchTree(relatedWordsCopy, action.searchWord);
+
+      if(currentNode !== null) {
+        currentNode.children = childrenWords.slice(2, 6);
+      } else {
+        currentNode = searchTree(relatedWordsCopy, action.parentNode)
+        const newChild = {name: action.searchWord, children: childrenWords.slice(2, 6)}
+        currentNode.children.push(newChild)
+      }
 
       // Add Element to related list
       return {

@@ -23,7 +23,7 @@ const DescriptionWordListBtns = (props) => {
         style={style}
         onClick={() => {
           props.storeSearchWord(word);
-          props.addRelatedWord(word);
+          props.addRelatedWord(word, props.parentNode);
           props.getSummary(word);
           props.getWordDictionary(word);
         }}
@@ -35,9 +35,15 @@ const DescriptionWordListBtns = (props) => {
   return <Aux>{randomWords}</Aux>;
 };
 
+const mapStateToProps = (state) => {
+  return {
+    parentNode: state.general.searchWord
+  }
+}
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    addRelatedWord: (value) => dispatch(actionTypes.addRelatedWords(value)),
+    addRelatedWord: (searchWord, parentNode) => dispatch(actionTypes.addRelatedWords({searchWord, parentNode})),
     getSummary: (value) => dispatch(actionTypes.getSummary(value)),
     getWordDictionary: (value) =>
       dispatch(actionTypes.getWordDictionary(value)),
@@ -46,4 +52,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(DescriptionWordListBtns);
+export default connect(mapStateToProps, mapDispatchToProps)(DescriptionWordListBtns);

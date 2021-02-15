@@ -53,7 +53,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addRelatedWord: (value) => dispatch(actionTypes.addRelatedWords(value)),
+    addRelatedWord: (searchWord) => dispatch(actionTypes.addRelatedWords({searchWord})),
     getSummary: (value) => dispatch(actionTypes.getSummary(value)),
     getWordDictionary: (value) =>
       dispatch(actionTypes.getWordDictionary(value)),
@@ -61,4 +61,5 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionTypes.storeSearchWord({searchWord: value})),
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(TreeGraph);

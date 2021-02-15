@@ -41,10 +41,10 @@ export const addRelatedWords = (payload) => {
   return (dispatch) => {
     dispatch(addRelatedWordsBegin());
 
-    return getRelatedWordsAPI(payload)
+    return getRelatedWordsAPI(payload.searchWord)
       .then((res) => {
         const data = res.data.words ? res.data.words : [];
-        dispatch(addRelatedWordsSuccess(data, payload));
+        dispatch(addRelatedWordsSuccess(data, {...payload}));
       })
       .catch((err) => {
         dispatch(addRelatedWordsFailure(err));
@@ -58,11 +58,12 @@ const addRelatedWordsBegin = () => {
   };
 };
 
-const addRelatedWordsSuccess = (data, searchWord) => {
+const addRelatedWordsSuccess = (data, {searchWord, parentNode}) => {
   return {
     type: actionType.ADD_RELATED_WORDS_SUCCESS,
     res: data,
-    searchWord: searchWord,
+    searchWord,
+    parentNode
   };
 };
 
