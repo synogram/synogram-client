@@ -33,14 +33,16 @@ class ResultsPage extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <NavBarWSeachbar isSearchBarHidden={false} />
-        {this.props.searchWord && this.props.loading && <Loading />}
-        <div className={styles.resultsContent}>
-          <TreeGraph />
-          <GraphSelection />
-        </div>
-        <Descriptions />
-        {this.props.error && <Error />}
+        {this.props.error ? <Error /> : 
+          <React.Fragment>
+            <NavBarWSeachbar isSearchBarHidden={false} />
+            {this.props.searchWord && this.props.loading && <Loading />}
+            <div className={styles.resultsContent}>
+              <TreeGraph />
+              <GraphSelection />
+            </div>
+            <Descriptions />
+          </React.Fragment>}
       </div>
     );
   }

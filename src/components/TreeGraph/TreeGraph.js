@@ -19,14 +19,13 @@ class TreeGraph extends Component {
   }
 
   render() {
-    
     return (
       <div
         className={styles.treeGraphContainer}
         ref={(tc) => (this.treeContainer = tc)}
       >
-       { !(this.props.relatedWordsTree === undefined || this.props.relatedWordsTree.length == 0) && <Tree
-          data={this.props.relatedWordsTree}
+       { this.props.relatedWordsTree !== undefined && Object.keys(this.props.relatedWordsTree).length !== 0 && <Tree
+          data={this.props.relatedWordsTree ? this.props.relatedWordsTree : {}}
           translate={this.state.translate}
           pathFunc="straight"
           rootNodeClassName="node__root"

@@ -35,7 +35,7 @@ const RelatedWordsReducer = (state = initialState, action) => {
       return {...state, loading: false, error: action.err};
 
     case actionTypes.ADD_RELATED_WORDS_BEGIN:
-      return {...state, loading: true, error: null};
+      return {...state, error: null};
 
     case actionTypes.ADD_RELATED_WORDS_SUCCESS:
       const childrenWords = action.res.map((element) => {
@@ -59,13 +59,12 @@ const RelatedWordsReducer = (state = initialState, action) => {
       // Add Element to related list
       return {
         ...state,
-        loading: false,
         relatedWordsTree: relatedWordsCopy,
         relatedWords: action.res,
       };
 
     case actionTypes.ADD_RELATED_WORDS_FAILURE:
-      return {...state, loading: false, error: action.err};
+      return {...state, error: action.err};
 
     default:
       return state;

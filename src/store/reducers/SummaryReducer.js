@@ -9,7 +9,7 @@ const initialState = {
 const SummaryReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.GET_WORD_SUMMARY_BEGIN:
-      return {...state, loading: true};
+      return {...state, loading: true, error: null};
     case actionTypes.GET_WORD_SUMMARY_SUCCESS:
       return {...state, loading: false, summary: action.summary};
     case actionTypes.GET_WORD_SUMMARY_FAILURE:
