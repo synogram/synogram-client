@@ -1,32 +1,10 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import styles from "./Descriptions.module.scss";
 
 import DescriptionWordListBtns from "./DescriptionWordListBtns/DescriptionButtons.js";
 import DescriptionWordInfo from "./DescriptionWordInfo/DescriptionWordInfo.js";
 import UpChevron from "../../assets/icons/descriptionModalUpChevron.svg";
-
-const TESTWORDS = [
-  "aug",
-  "aquamarine",
-  "tracheae",
-  "fro",
-  "runlet",
-  "mouthpiece",
-  "heterophyte",
-  "nonsuppositive",
-  "retaker",
-  "craunch",
-  "preready",
-  "yeastless",
-  "gulllike",
-  "nonsystematic",
-  "voodooing",
-  "bluebonnet",
-  "gunkholed",
-  "decretory",
-  "listerising",
-  "reassurance",
-];
+import {connect} from "react-redux";
 
 class Descriptions extends Component {
   constructor(props) {
@@ -41,7 +19,7 @@ class Descriptions extends Component {
   }
 
   scrollToView() {
-    this.myRef.current.scrollIntoView({ behavior: "smooth" });
+    this.myRef.current.scrollIntoView({behavior: "smooth"});
   }
 
   buttonHandler() {
@@ -52,14 +30,14 @@ class Descriptions extends Component {
   }
 
   flipImage() {
-    return this.state.isWordListClicked
-      ? { transform: "rotate(180deg)" }
-      : null;
+    return this.state.isWordListClicked ? {transform: "rotate(180deg)"} : null;
   }
 
   render() {
     const WORD_LIST =
-      TESTWORDS !== undefined || TESTWORDS !== null ? [...TESTWORDS] : []; //TESTWORDS is a place holder for the incoming word list array
+      this.props.relatedWords !== undefined || this.props.relatedWords !== null
+        ? [...this.props.relatedWords]
+        : []; //TESTWORDS is a place holder for the incoming word list array
 
     return (
       <div className={styles.mainDescriptionBox} ref={this.myRef}>
@@ -85,4 +63,10 @@ class Descriptions extends Component {
   }
 }
 
-export default Descriptions;
+const mapStateToProps = (state) => {
+  return {
+    relatedWords: state.related.relatedWords,
+  };
+};
+
+export default connect(mapStateToProps)(Descriptions);

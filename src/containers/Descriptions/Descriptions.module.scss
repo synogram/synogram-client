@@ -1,16 +1,16 @@
 .mainDescriptionBox {
   background: #cccccc 0% 0% no-repeat padding-box;
-  border-radius: 2.5vw 2.5vw 0 0;
-  opacity: 0.69;
+  border-radius: 3vh 3vh 0 0;
+  opacity: 0.8;
   width: 100%;
   position: fixed;
   bottom: 0;
   .mainDescriptionExpandBtn {
     width: 100%;
-    height: 3vw;
+    height: 3rem;
     background-color: transparent;
     img {
-      height: 35%;
+      height: 1.5rem;
     }
   }
 
@@ -24,7 +24,7 @@
       width: 25%;
       flex-flow: row wrap;
       align-content: flex-start;
-      margin-bottom: 3vw;
+      margin-bottom: 3%;
     }
     .mainDescriptionItem {
       width: 65%;

@@ -9,7 +9,7 @@ const initialState = {
 const WordDictionaryReducer = (state = initialState, action) => {
     switch(action.type) {
         case actionTypes.GET_WORD_DICTIONARY_BEGIN:
-            return {...state, loading: true}
+            return {...state, loading: true, error: null}
         case actionTypes.GET_WORD_DICTIONARY_SUCCESS:
             return {...state, loading: false, definition: action.definition}
         case actionTypes.GET_WORD_DICTIONARY_FAILURE:

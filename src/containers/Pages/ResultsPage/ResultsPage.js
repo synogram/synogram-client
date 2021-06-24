@@ -5,9 +5,10 @@ import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachba
 import Descriptions from "../../Descriptions/Descriptions";
 import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
-import GraphSelection from "../../../components/GraphSelection/GraphSelection";
 import Loading from "../../../components/Loading/Loading";
 import Error from "../../../components/Error/Error";
+import GraphSelection from "../../../components/GraphSelection/GraphSelection";
+import TreeGraph from "../../../components/TreeGraph/TreeGraph";
 
 class ResultsPage extends React.Component {
   componentDidMount() {
@@ -16,8 +17,9 @@ class ResultsPage extends React.Component {
     }
   }
 
-  componentDidUpdate(prevprops, prevState) {
-    if (prevprops.searchWord !== this.props.searchWord) {
+  componentDidUpdate(prevprops) {
+    // When searching again through the nav bar, check if the word searched is different
+    if (prevprops.initialSearchWord !== this.props.initialSearchWord) {
       this.generateSearchWordData();
     }
   }
@@ -31,18 +33,16 @@ class ResultsPage extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        <NavBarWSeachbar />
-        {!this.props.searchWord && <div>No word searched. Try again.</div>}
-        {this.props.searchWord &&
-          this.props.relatedWords.length < 1 &&
-          this.props.loading && <Loading />}
-        {this.props.relatedWords.length > 0 && !this.props.loading && (
-          <div>
-            <GraphSelection />
-          </div>
-        )}
-        <Descriptions />
-        {this.props.error && <Error />}
+        {this.props.error ? <Error /> : 
+          <React.Fragment>
+            <NavBarWSeachbar isSearchBarHidden={false} />
+            {this.props.searchWord && this.props.loading && <Loading />}
+            <div className={styles.resultsContent}>
+              <TreeGraph />
+              <GraphSelection />
+            </div>
+            <Descriptions />
+          </React.Fragment>}
       </div>
     );
   }
@@ -51,8 +51,10 @@ class ResultsPage extends React.Component {
 const mapStateToProps = (state) => {
   return {
     searchWord: state.general.searchWord,
+    initialSearchWord: state.general.initialSearchWord,
     loading: state.related.loading,
     relatedWords: state.related.relatedWords,
+    relatedWordsTree: state.related.relatedWordsTree,
     error: state.related.error,
     dictionaryLoading: state.dictionary.loading,
   };

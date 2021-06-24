@@ -1,0 +1,12 @@
+:global(.node__root > circle),
+:global(.node__branch > circle),
+:global(.node__leaf > circle) {
+  r: 2rem;
+  cursor: pointer;
+  stroke: white !important;
+}
+
+:global(.rd3t-label__title),
+:global(.rd3t-link) {
+  stroke: white !important;
+}

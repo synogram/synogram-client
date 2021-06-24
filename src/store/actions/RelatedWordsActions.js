@@ -3,7 +3,7 @@ import {getRelatedWordsAPI} from "../../utilities/apiHandler";
 
 export const getRelatedWords = (payload) => {
   return (dispatch) => {
-    dispatch(getRelatedWordsBegin());
+    dispatch(getRelatedWordsBegin(payload));
 
     return getRelatedWordsAPI(payload)
       .then((res) => {
@@ -16,9 +16,10 @@ export const getRelatedWords = (payload) => {
   };
 };
 
-const getRelatedWordsBegin = () => {
+const getRelatedWordsBegin = (searchword) => {
   return {
     type: actionType.GET_RELATED_WORDS_BEGIN,
+    searchWord: searchword,
   };
 };
 
@@ -32,6 +33,43 @@ const getRelatedWordsSuccess = (data) => {
 const getRelatedWordsFailure = (err) => {
   return {
     type: actionType.GET_RELATED_WORDS_FAILURE,
+    err: err,
+  };
+};
+
+export const addRelatedWords = (payload) => {
+  return (dispatch) => {
+    dispatch(addRelatedWordsBegin());
+
+    return getRelatedWordsAPI(payload.searchWord)
+      .then((res) => {
+        const data = res.data.words ? res.data.words : [];
+        dispatch(addRelatedWordsSuccess(data, {...payload}));
+      })
+      .catch((err) => {
+        dispatch(addRelatedWordsFailure(err));
+      });
+  };
+};
+
+const addRelatedWordsBegin = () => {
+  return {
+    type: actionType.ADD_RELATED_WORDS_BEGIN,
+  };
+};
+
+const addRelatedWordsSuccess = (data, {searchWord, parentNode}) => {
+  return {
+    type: actionType.ADD_RELATED_WORDS_SUCCESS,
+    res: data,
+    searchWord,
+    parentNode
+  };
+};
+
+const addRelatedWordsFailure = (err) => {
+  return {
+    type: actionType.ADD_RELATED_WORDS_FAILURE,
     err: err,
   };
 };

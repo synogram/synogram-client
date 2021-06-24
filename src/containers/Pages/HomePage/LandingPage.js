@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./HomePage.module.scss";
+import styles from "./LandingPage.module.scss";
 import SearchBar from "../../../components/SearchBar/SearchBar";
 import messages from "../../../constants/Messages";
 import NavBar from "../../../components/NavBar/Navbar";
@@ -7,21 +7,21 @@ import {connect} from "react-redux";
 import {RESET_REDUX_STATE} from "../../../store/actions/actionTypes";
 import Logo from "../../../components/Logo/Logo";
 
-class HomePage extends React.Component {
+class LandingPage extends React.Component {
   state = {
     scrollbarVisible: false,
   };
 
+  magnifyGlassId = "Magnifying_Glass";
+
   componentDidMount() {
     if (
-      this.getElementById("Magnifying_Glass").clientHeight >
-        document.body.clientHeight ||
-      document.body.scrollHeight > document.body.clientHeight
+      this.getElementById(this.magnifyGlassId).clientHeight >document.body.clientHeight || document.body.scrollHeight > document.body.clientHeight
     ) {
       this.setState({scrollbarVisible: true});
     }
 
-    // If you return to the homepage. The redux state has to reset.
+    // If you return to the landingPage. The redux state has to reset.
     this.props.resetRedux();
   }
   getElementById = (id) => {
@@ -33,30 +33,31 @@ class HomePage extends React.Component {
   };
 
   render() {
-    const scrollbarHomepage = this.state.scrollbarVisible
+    // takes into account background not covering absolute positioned item
+    const extendBackground = this.state.scrollbarVisible
       ? {
           minHeight:
             Math.max(
-              this.getElementById("Magnifying_Glass").clientHeight,
+              this.getElementById(this.magnifyGlassId).clientHeight,
               document.body.scrollHeight
             ) + "px",
         }
       : {};
 
     return (
-      <div className={styles.homepage} style={scrollbarHomepage}>
-        <div id={"Magnifying_Glass"} className={styles.magnify_glass_container}>
-          <div className={styles.outer_glass} />
-          <div className={styles.inner_glass} />
-          <div className={styles.glass_handle} />
+      <div className={styles.landingPage} style={extendBackground}>
+        <div id={this.magnifyGlassId} className={styles.magnifyGlass}>
+          <div className={styles.outerGlass} />
+          <div className={styles.innerGlass} />
+          <div className={styles.glassHandle} />
         </div>
 
-        <div className={styles.content_container}>
-          <NavBar className={styles.homepage_navbar} />
+        <div className={styles.content}>
+          <NavBar className={styles.landingPageNavbar} />
           <Logo />
           <SearchBar isSmall={false} />
-          <div className={styles.homepage_description}>
-            <p>{messages.front_page_description}</p>
+          <div className={styles.landingPageDescription}>
+            <p>{messages.landingPageDescription}</p>
           </div>
         </div>
       </div>
@@ -69,4 +70,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(HomePage);
+export default connect(null, mapDispatchToProps)(LandingPage);

@@ -8,13 +8,9 @@ const NavItems = (props) => {
   const supportedTabs = props.supportedTabs;
 
   const generateRouteForTabs = (type) => {
-    switch (type) {
-      case UI_NAVBAR_ITEM.HOME:
-        return "/";
-      case UI_NAVBAR_ITEM.ABOUT:
-        return "/" + type;
-    }
+    return type === UI_NAVBAR_ITEM.HOME? "/" : "/" + type;
   };
+  
   const generateNavItem = () => {
     let supportedTabCopy = [...supportedTabs];
     supportedTabCopy = supportedTabCopy.map((type, index) => {

@@ -12,6 +12,7 @@
     "jest-canvas-mock": "^2.3.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
+    "react-d3-tree": "^2.0.0",
     "react-dom": "^16.13.1",
     "react-plotly.js": "^2.5.0",
     "react-redux": "^7.2.1",

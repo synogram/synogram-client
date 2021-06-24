@@ -1,23 +1,52 @@
 import React from "react";
 import styles from "./DescriptionWordInfo.module.scss";
+import {connect} from "react-redux";
+import Loading from "../../../components/Loading/Loading";
 
-const DescriptionWordInfo = () => {
+const DescriptionWordInfo = (props) => {
   return (
     <>
-      <h1>Test title</h1>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
-      </p>
+    {props.searchWord ? 
+      <> 
+        <h1>{props.searchWord}</h1>
+        { props.definitionLoading && props.descriptionLoading ? 
+          <Loading/>
+          :
+          <div>
+            {props.definition && (
+              <div className={styles.text}>
+                <label>Definition:</label>
+                <p>{props.definition}</p>
+              </div>
+            )}
+            {props.description && (
+              <div className={styles.text}>
+                <label>Description:</label>
+                <p>{props.description}</p>
+              </div>
+            )}
+          </div>
+        }
+      </>
+      :
+      <>
+        <h1>No word searched. Start by entering a word in the searchbox</h1>
+      </>
+    }
     </>
   );
 };
 
-export default DescriptionWordInfo;
+const mapStateToProps = (state) => {
+  return {
+    searchWord: state.general.searchWord,
+    description: state.summary.summary,
+    definition: state.dictionary.definition,
+    descriptionLoading: state.summary.loading,
+    definitionLoading: state.dictionary.loading,
+    descriptionError: state.summary.error,
+    definitionError: state.dictionary.error
+  };
+};
+
+export default connect(mapStateToProps)(DescriptionWordInfo);
