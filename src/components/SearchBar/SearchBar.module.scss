@@ -7,11 +7,11 @@
   align-items: center;
   position: relative;
   background-color: white;
+  box-shadow: 1px 1px #b0b0b0;
 
   .searchBar {
     width: 80%;
     height: 80%;
-
     position: relative;
     left: 8%;
     color: #525252;
@@ -58,13 +58,13 @@
 
 // Override some of the existing css properties when using the "smaller" version of the search bar
 .small.searchbarContainer {
-    min-width: 40rem;
-    width: 40rem;
-    height: 3.5rem;
-    
+  min-width: 40rem;
+  width: 40rem;
+  height: 3.5rem;
+
   & .searchBar {
     left: 9%;
-  
+
     & input {
       font-size: 1.5rem;
     }
@@ -72,11 +72,11 @@
   & .searchButton {
     top: unset;
   }
-  
+
   & .searchButton_translate {
     transform: translateX(35rem);
   }
-  
+
   & .searchIcon {
     width: 1.7rem;
   }
