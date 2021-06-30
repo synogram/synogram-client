@@ -4,32 +4,32 @@ import styles from "./TeamProfile.module.scss";
 import TeamProfileLinks from "./TeamProfileLinks/TeamProfileLinks.js";
 
 import React from "react";
+import {PROFILE} from "../../constants/Constants.js";
 
 const teamProfile = () => {
-  const TEAM = profiles.map((teamMember, index) => {
+  const profilesClone = {...profiles};
+  const TEAM = Object.keys(profilesClone).map((teamMember, index) => {
     return (
-      <React.Fragment>
-        <div className={styles.teamProfile}>
-          <div
-            className={styles.magnifyGlassContainer}
-            key={teamMember.name + index}
-          >
-            <div className={styles.magnifyGlass}>
-              <img
-                src="https://www.w3schools.com/howto/img_avatar.png"
-                alt="test"
-                className={styles.imgAvatar}
-              ></img>
-              <TeamProfileLinks />
-              <div className={styles.magnifyGlassHandle}></div>
-            </div>
-          </div>
-          <div className={styles.teamMemberInfo}>
-            <h4>{teamMember.name}</h4>
-            <p>{teamMember.description}</p>
+      <div
+        className={styles.teamProfile}
+        key={profiles[teamMember][PROFILE.NAME] + index}
+      >
+        <div className={styles.magnifyGlassContainer}>
+          <div className={styles.magnifyGlass}>
+            <img
+              src="https://www.w3schools.com/howto/img_avatar.png"
+              alt="test"
+              className={styles.imgAvatar}
+            ></img>
+            <TeamProfileLinks />
+            <div className={styles.magnifyGlassHandle}></div>
           </div>
         </div>
-      </React.Fragment>
+        <div className={styles.teamMemberInfo}>
+          <h4>{profiles[teamMember][PROFILE.NAME]}</h4>
+          <p>{profiles[teamMember][PROFILE.DESCRIPTION]}</p>
+        </div>
+      </div>
     );
   });
 
