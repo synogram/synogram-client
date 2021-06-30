@@ -2,7 +2,7 @@
 
 .landingPage {
   background-color: $backgroundColor;
-  min-height: 100%;
+  min-height: 100vh;
 }
 
 .synogramIcon {
@@ -24,6 +24,7 @@
 
     & p {
       font-size: 14px;
+      text-align: center;
     }
   }
 
@@ -35,11 +36,12 @@
 
 .magnifyGlass {
   position: absolute;
-  width: 125vh;
-  height: 125vh;
+  width: 100vh;
+  height: 100vh;
   right: 0;
   overflow: hidden;
   z-index: 0;
+  top: 0;
   & .outerGlass {
     background-color: white;
     width: 95%;

@@ -8,7 +8,7 @@ import AboutPage from "../Pages/AboutPage/AboutPage";
 class Layout extends React.Component {
   render() {
     return (
-      <div className={styles.layout} style={{height: "100%"}}>
+      <div className={styles.layout}>
         <Route path="/" exact render={() => <LandingPage></LandingPage>} />
         <Route
           path="/results"
