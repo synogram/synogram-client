@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./TeamProfileLinks.module.scss";
 
-import emailIcon from "../../../../../assets/icons/email-logo.svg";
-import githubIcon from "../../../../../assets/icons/github-logo.svg";
-import linkedinIcon from "../../../../../assets/icons/linkedin-logo.svg";
+import emailIcon from "../../../assets/icons/email-logo.svg";
+import githubIcon from "../../../assets/icons/github-logo.svg";
+import linkedinIcon from "../../../assets/icons/linkedin-logo.svg";
 
 const TeamProfileLinks = () => {
   return (

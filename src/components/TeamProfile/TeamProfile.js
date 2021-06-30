@@ -1,4 +1,4 @@
-import profiles from "../../../../constants/Profiles.js";
+import profiles from "../../constants/Profiles.js";
 import styles from "./TeamProfile.module.scss";
 
 import TeamProfileLinks from "./TeamProfileLinks/TeamProfileLinks.js";
