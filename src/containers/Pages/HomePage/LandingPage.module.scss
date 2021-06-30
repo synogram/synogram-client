@@ -24,6 +24,7 @@
 
     & p {
       font-size: 14px;
+      text-align: center;
     }
   }
 
@@ -40,6 +41,7 @@
   right: 0;
   overflow: hidden;
   z-index: 0;
+  top: 0;
   & .outerGlass {
     background-color: white;
     width: 95%;
