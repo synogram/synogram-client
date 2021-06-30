@@ -1,45 +1,40 @@
-import { PROFILE } from "./Constants.js";
+import {PROFILE} from "./Constants.js";
 
 export const Profiles = [
   {
     [PROFILE.NAME]: "Jeongwon Song",
-    [PROFILE.EMAIL]: "",
-    [PROFILE.GITHUB]: "",
-    [PROFILE.LINKEDIN]: "",
-    [PROFILE.DESCRIPTION]:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    [PROFILE.EMAIL]: "jsong336@uwo.ca",
+    [PROFILE.GITHUB]: "https://github.com/jsong336",
+    [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/jeongwonsong",
+    [PROFILE.DESCRIPTION]: "Project Manager, Backend Manager",
   },
   {
     [PROFILE.NAME]: "Junseo Hwang",
-    [PROFILE.EMAIL]: "",
-    [PROFILE.GITHUB]: "",
-    [PROFILE.LINKEDIN]: "",
-    [PROFILE.DESCRIPTION]:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    [PROFILE.EMAIL]: "jun_hwang560@hotmail.com",
+    [PROFILE.GITHUB]: "https://github.com/jhwan7",
+    [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/junseo-hwang",
+    [PROFILE.DESCRIPTION]: "Project Manager, Frontend Manager",
   },
   {
     [PROFILE.NAME]: "Mathieu Girard",
-    [PROFILE.EMAIL]: "",
-    [PROFILE.GITHUB]: "",
-    [PROFILE.LINKEDIN]: "",
-    [PROFILE.DESCRIPTION]:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    [PROFILE.EMAIL]: "mathieu.m.girard@gmail.com",
+    [PROFILE.GITHUB]: "https://github.com/MathieuGirard19",
+    [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/mathieugirard1997/",
+    [PROFILE.DESCRIPTION]: "Backend Developer",
   },
   {
     [PROFILE.NAME]: "Ewhan Han",
     [PROFILE.EMAIL]: "",
-    [PROFILE.GITHUB]: "",
-    [PROFILE.LINKEDIN]: "",
-    [PROFILE.DESCRIPTION]:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    [PROFILE.GITHUB]: "https://github.com/EwhanHan",
+    [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/ewhanhan/",
+    [PROFILE.DESCRIPTION]: "Frontend Developer",
   },
   {
     [PROFILE.NAME]: "Erin Ha",
-    [PROFILE.EMAIL]: "",
+    [PROFILE.EMAIL]: "erinhayerin@gmail.com",
     [PROFILE.GITHUB]: "",
-    [PROFILE.LINKEDIN]: "",
-    [PROFILE.DESCRIPTION]:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/erin-ha/",
+    [PROFILE.DESCRIPTION]: "UI/UX Designer",
   },
 ];
 

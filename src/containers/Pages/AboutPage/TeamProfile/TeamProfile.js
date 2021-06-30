@@ -1,4 +1,4 @@
-import Profiles from "../../../../constants/Profiles.js";
+import profiles from "../../../../constants/Profiles.js";
 import styles from "./TeamProfile.module.scss";
 
 import TeamProfileLinks from "./TeamProfileLinks/TeamProfileLinks.js";
@@ -6,7 +6,7 @@ import TeamProfileLinks from "./TeamProfileLinks/TeamProfileLinks.js";
 import React from "react";
 
 const teamProfile = () => {
-  const TEAM = Profiles.map((teamMember, index) => {
+  const TEAM = profiles.map((teamMember, index) => {
     return (
       <React.Fragment>
         <div className={styles.teamProfile}>
