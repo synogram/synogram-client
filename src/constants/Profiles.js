@@ -26,6 +26,14 @@ export const Profiles = {
     [PROFILE.DESCRIPTION]: "PM, Frontend Developer",
     [PROFILE.IMAGE]: getProfileImage(members.JUNSEO),
   },
+  [members.ERIN]: {
+    [PROFILE.NAME]: "Erin Ha",
+    [PROFILE.EMAIL]: "erinhayerin@gmail.com",
+    [PROFILE.GITHUB]: "",
+    [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/erin-ha/",
+    [PROFILE.DESCRIPTION]: "UI/UX Designer",
+    [PROFILE.IMAGE]: getProfileImage(members.ERIN),
+  },
   [members.MATT]: {
     [PROFILE.NAME]: "Mathieu Girard",
     [PROFILE.EMAIL]: "mathieu.m.girard@gmail.com",
@@ -41,14 +49,6 @@ export const Profiles = {
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/ewhanhan/",
     [PROFILE.DESCRIPTION]: "Frontend Developer",
     [PROFILE.IMAGE]: getProfileImage(members.EWHAN),
-  },
-  [members.ERIN]: {
-    [PROFILE.NAME]: "Erin Ha",
-    [PROFILE.EMAIL]: "erinhayerin@gmail.com",
-    [PROFILE.GITHUB]: "",
-    [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/erin-ha/",
-    [PROFILE.DESCRIPTION]: "UI/UX Designer",
-    [PROFILE.IMAGE]: getProfileImage(members.ERIN),
   },
 };
 
