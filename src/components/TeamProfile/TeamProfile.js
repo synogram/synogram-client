@@ -18,10 +18,16 @@ const teamProfile = () => {
           <div className={styles.magnifyGlass}>
             <img
               src={profiles[teamMember][PROFILE.IMAGE]}
-              alt={`${profiles[teamMember][PROFILE.NAME]} picture`}
+              alt={`${profiles[teamMember][PROFILE.NAME]} profile`}
               className={styles.imgAvatar}
             ></img>
-            <TeamProfileLinks />
+            <TeamProfileLinks
+              links={{
+                [PROFILE.EMAIL]: profiles[teamMember][PROFILE.EMAIL],
+                [PROFILE.GITHUB]: profiles[teamMember][PROFILE.GITHUB],
+                [PROFILE.LINKEDIN]: profiles[teamMember][PROFILE.LINKEDIN],
+              }}
+            />
             <div className={styles.magnifyGlassHandle}></div>
           </div>
         </div>

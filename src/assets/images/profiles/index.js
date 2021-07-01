@@ -17,6 +17,8 @@ const getProfileImage = (profileName) => {
       return Matt;
     case members.ERIN:
       return Erin;
+    default:
+      return "https://www.w3schools.com/howto/img_avatar.png";
   }
 };
 
