@@ -13,4 +13,5 @@ export const PROFILE = {
   GITHUB: "github",
   LINKEDIN: "linkedin",
   DESCRIPTION: "description",
+  IMAGE: "image",
 };

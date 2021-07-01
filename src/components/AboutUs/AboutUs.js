@@ -1,5 +1,5 @@
 import React from "react";
-import MESSAGE from "../../../../constants/Messages.js";
+import MESSAGE from "../../constants/Messages.js";
 import styles from "./AboutUs.module.scss";
 
 const AboutUs = () => {

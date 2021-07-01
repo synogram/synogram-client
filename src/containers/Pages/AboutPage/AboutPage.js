@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./AboutPage.module.scss";
 
-import AboutUs from "./AboutUs/AboutUs.js";
-import TeamProfile from "./TeamProfile/TeamProfile.js";
+import AboutUs from "../../../components/AboutUs/AboutUs";
+import TeamProfile from "../../../components/TeamProfile/TeamProfile.js";
 
 import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachbar";
 import Aux from "../../../hoc/auxilary";
