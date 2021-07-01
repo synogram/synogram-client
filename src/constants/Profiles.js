@@ -1,4 +1,5 @@
 import {PROFILE} from "./Constants.js";
+import getProfileImage from "../assets/images/profiles/index";
 
 export const members = {
   JEONGWON: "JEONGWON",
@@ -15,6 +16,7 @@ export const Profiles = {
     [PROFILE.GITHUB]: "https://github.com/jsong336",
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/jeongwonsong",
     [PROFILE.DESCRIPTION]: "Project Manager, Backend Manager",
+    [PROFILE.IMAGE]: getProfileImage(members.JEONGWON),
   },
   [members.JUNSEO]: {
     [PROFILE.NAME]: "Junseo Hwang",
@@ -22,6 +24,7 @@ export const Profiles = {
     [PROFILE.GITHUB]: "https://github.com/jhwan7",
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/junseo-hwang",
     [PROFILE.DESCRIPTION]: "Project Manager, Frontend Manager",
+    [PROFILE.IMAGE]: getProfileImage(members.JUNSEO),
   },
   [members.MATT]: {
     [PROFILE.NAME]: "Mathieu Girard",
@@ -29,6 +32,7 @@ export const Profiles = {
     [PROFILE.GITHUB]: "https://github.com/MathieuGirard19",
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/mathieugirard1997/",
     [PROFILE.DESCRIPTION]: "Backend Developer",
+    [PROFILE.IMAGE]: getProfileImage(members.MATT),
   },
   [members.EWHAN]: {
     [PROFILE.NAME]: "Ewhan Han",
@@ -36,6 +40,7 @@ export const Profiles = {
     [PROFILE.GITHUB]: "https://github.com/EwhanHan",
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/ewhanhan/",
     [PROFILE.DESCRIPTION]: "Frontend Developer",
+    [PROFILE.IMAGE]: getProfileImage(members.EWHAN),
   },
   [members.ERIN]: {
     [PROFILE.NAME]: "Erin Ha",
@@ -43,6 +48,7 @@ export const Profiles = {
     [PROFILE.GITHUB]: "",
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/erin-ha/",
     [PROFILE.DESCRIPTION]: "UI/UX Designer",
+    [PROFILE.IMAGE]: getProfileImage(members.ERIN),
   },
 };
 

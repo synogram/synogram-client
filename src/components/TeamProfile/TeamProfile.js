@@ -17,8 +17,8 @@ const teamProfile = () => {
         <div className={styles.magnifyGlassContainer}>
           <div className={styles.magnifyGlass}>
             <img
-              src="https://www.w3schools.com/howto/img_avatar.png"
-              alt="test"
+              src={profiles[teamMember][PROFILE.IMAGE]}
+              alt={`${profiles[teamMember][PROFILE.NAME]} picture`}
               className={styles.imgAvatar}
             ></img>
             <TeamProfileLinks />
