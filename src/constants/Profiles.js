@@ -15,7 +15,7 @@ export const Profiles = {
     [PROFILE.EMAIL]: "jsong336@uwo.ca",
     [PROFILE.GITHUB]: "https://github.com/jsong336",
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/jeongwonsong",
-    [PROFILE.DESCRIPTION]: "Project Manager, Backend Manager",
+    [PROFILE.DESCRIPTION]: "PM, Backend Developer",
     [PROFILE.IMAGE]: getProfileImage(members.JEONGWON),
   },
   [members.JUNSEO]: {
@@ -23,7 +23,7 @@ export const Profiles = {
     [PROFILE.EMAIL]: "jun_hwang560@hotmail.com",
     [PROFILE.GITHUB]: "https://github.com/jhwan7",
     [PROFILE.LINKEDIN]: "https://www.linkedin.com/in/junseo-hwang",
-    [PROFILE.DESCRIPTION]: "Project Manager, Frontend Manager",
+    [PROFILE.DESCRIPTION]: "PM, Frontend Developer",
     [PROFILE.IMAGE]: getProfileImage(members.JUNSEO),
   },
   [members.MATT]: {
