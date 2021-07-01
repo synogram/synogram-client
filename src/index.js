@@ -4,6 +4,7 @@ import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
 import {BrowserRouter} from "react-router-dom";
 import Layout from "./containers/Layouts/Layout";
+import Bootstrap from "./containers/Bootstrap/Bootstrap";
 import {createStore, combineReducers, applyMiddleware, compose} from "redux";
 import relatedWordsReducer from "./store/reducers/RelatedWordsReducer";
 import summaryReducer from "./store/reducers/SummaryReducer";
@@ -37,7 +38,9 @@ ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
       <Provider store={store}>
-        <Layout></Layout>
+        <Bootstrap>
+          <Layout></Layout>
+        </Bootstrap>
       </Provider>
     </React.StrictMode>
   </BrowserRouter>,

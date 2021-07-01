@@ -6,6 +6,7 @@ const initialState = {
   loading: false,
   error: null,
   wordChain: [],
+  isServerOn: false,
 };
 
 const GeneralReducer = (state = initialState, action) => {
@@ -20,6 +21,11 @@ const GeneralReducer = (state = initialState, action) => {
         ...state,
         searchWord: action.payload.searchWord,
         initialSearchWord: action.payload.searchWord,
+      };
+    case actionTypes.SET_IS_SERVER_ONLINE:
+      return {
+        ...state,
+        isServerOn: action.payload.isServerOn,
       };
     default:
       return state;

@@ -6,6 +6,7 @@ export const STORE_SEARCH_WORD = "storeSearchWord";
 export const STORE_INITIAL_SEARCH_WORD = "storeInitialSearchWord";
 export const PUSH_SEARCH_WORD = "pushSearchWord";
 export const POP_SEARCH_WORD = "popSearchWord";
+export const SET_IS_SERVER_ONLINE = "checkServerOnline";
 
 // Related Words Reducer
 export const GET_RELATED_WORDS_BEGIN = "getRelatedWordsBegin";
