@@ -1,11 +1,44 @@
 import React from "react";
+import {getRelatedWordsAPI} from "../../utilities/apiHandler";
+import {connect} from "react-redux";
+import * as actionTypes from "../../store/index";
+import LoadingBlack from "../../components/Loading/LoadingBlack/LoadingBlack";
 
 class Bootstrap extends React.Component {
-  componentDidMount() {}
+  state = {
+    isServerChecked: false,
+  };
+
+  componentDidMount() {
+    // Check server status
+    getRelatedWordsAPI("test")
+      .then((res) => {
+        console.log("success");
+        this.props.setIsServerOnline(true);
+        this.setState({isServerChecked: true});
+      })
+      .catch((err) => {
+        console.log("failed");
+        this.props.setIsServerOnline(false);
+        this.setState({isServerChecked: true});
+      });
+  }
 
   render() {
-    return <>{this.props.children}</>;
+    return (
+      <>
+        {!this.state.isServerChecked && <LoadingBlack />}
+        {this.state.isServerChecked && this.props.children}
+      </>
+    );
   }
 }
 
-export default Bootstrap;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setIsServerOnline: (value) =>
+      dispatch(actionTypes.setIsServerOnline(value)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Bootstrap);

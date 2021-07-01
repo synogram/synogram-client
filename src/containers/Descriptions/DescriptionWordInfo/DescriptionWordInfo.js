@@ -1,38 +1,38 @@
 import React from "react";
 import styles from "./DescriptionWordInfo.module.scss";
 import {connect} from "react-redux";
-import Loading from "../../../components/Loading/Loading";
+import LoadingWhite from "../../../components/Loading/LoadingWhite/LoadingWhite";
 
 const DescriptionWordInfo = (props) => {
   return (
     <>
-    {props.searchWord ? 
-      <> 
-        <h1>{props.searchWord}</h1>
-        { props.definitionLoading && props.descriptionLoading ? 
-          <Loading/>
-          :
-          <div>
-            {props.definition && (
-              <div className={styles.text}>
-                <label>Definition:</label>
-                <p>{props.definition}</p>
-              </div>
-            )}
-            {props.description && (
-              <div className={styles.text}>
-                <label>Description:</label>
-                <p>{props.description}</p>
-              </div>
-            )}
-          </div>
-        }
-      </>
-      :
-      <>
-        <h1>No word searched. Start by entering a word in the searchbox</h1>
-      </>
-    }
+      {props.searchWord ? (
+        <>
+          <h1>{props.searchWord}</h1>
+          {props.definitionLoading && props.descriptionLoading ? (
+            <LoadingWhite />
+          ) : (
+            <div>
+              {props.definition && (
+                <div className={styles.text}>
+                  <label>Definition:</label>
+                  <p>{props.definition}</p>
+                </div>
+              )}
+              {props.description && (
+                <div className={styles.text}>
+                  <label>Description:</label>
+                  <p>{props.description}</p>
+                </div>
+              )}
+            </div>
+          )}
+        </>
+      ) : (
+        <>
+          <h1>No word searched. Start by entering a word in the searchbox</h1>
+        </>
+      )}
     </>
   );
 };
@@ -45,7 +45,7 @@ const mapStateToProps = (state) => {
     descriptionLoading: state.summary.loading,
     definitionLoading: state.dictionary.loading,
     descriptionError: state.summary.error,
-    definitionError: state.dictionary.error
+    definitionError: state.dictionary.error,
   };
 };
 

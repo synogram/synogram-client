@@ -5,7 +5,7 @@ import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachba
 import Descriptions from "../../Descriptions/Descriptions";
 import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
-import Loading from "../../../components/Loading/Loading";
+import LoadingWhite from "../../../components/Loading/LoadingWhite/LoadingWhite";
 import Error from "../../../components/Error/Error";
 import GraphSelection from "../../../components/GraphSelection/GraphSelection";
 import TreeGraph from "../../../components/TreeGraph/TreeGraph";
@@ -34,7 +34,7 @@ class ResultsPage extends React.Component {
     return (
       <div className={styles.container}>
         <NavBarWSeachbar isSearchBarHidden={false} />
-        {this.props.searchWord && this.props.loading && <Loading />}
+        {this.props.searchWord && this.props.loading && <LoadingWhite />}
         <div className={styles.resultsContent}>
           {this.props.searchWord && !this.props.loading && !this.props.error && (
             <>

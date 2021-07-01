@@ -15,6 +15,7 @@ export const storeSearchWord = (payload) => {
 };
 
 export const setIsServerOnline = (payload) => {
+  console.log(payload);
   return {
     type: actionType.SET_IS_SERVER_ONLINE,
     payload: payload,
