@@ -32,8 +32,8 @@ const teamProfile = () => {
           </div>
         </div>
         <div className={styles.teamMemberInfo}>
-          <h4>{profiles[teamMember][PROFILE.NAME]}</h4>
-          <p>{profiles[teamMember][PROFILE.DESCRIPTION]}</p>
+          <h3>{profiles[teamMember][PROFILE.NAME]}</h3>
+          <h4>{profiles[teamMember][PROFILE.DESCRIPTION]}</h4>
         </div>
       </div>
     );
