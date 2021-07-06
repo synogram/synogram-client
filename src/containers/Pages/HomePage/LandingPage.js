@@ -6,6 +6,7 @@ import NavBar from "../../../components/NavBar/Navbar";
 import {connect} from "react-redux";
 import {RESET_REDUX_STATE} from "../../../store/actions/actionTypes";
 import Logo from "../../../components/Logo/Logo";
+import Notification from "../../../components/Notification/Notification";
 
 class LandingPage extends React.Component {
   magnifyGlassId = "Magnifying_Glass";
@@ -18,6 +19,7 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className={styles.landingPage}>
+        <Notification text={messages.offlineServerDefault}></Notification>
         <div className={styles.content}>
           <NavBar className={styles.landingPageNavbar} />
           <Logo />

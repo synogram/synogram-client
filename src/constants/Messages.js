@@ -17,6 +17,10 @@ const messages = {
     "The current mechanics of search and browsing information from the web is sequential. Users of search engines have to read over massive amounts of text sequentially to find the best result.",
   about_page_description2:
     " Our goal is to create a website that summarizes massive amounts of information from the web and provides a visual and interactive way of displaying results. Thus users have a higher dimension way of browsing information and learning about new topics from the web.",
+
+  // Offline Server message
+  offlineServerDefault:
+    "Welcome to Synogram, currently you are accessing the Offline version of our product. To see full capabilities of the product please check out our <github:url> repo",
 };
 
 export default messages;
