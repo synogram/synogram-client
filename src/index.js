@@ -10,6 +10,7 @@ import relatedWordsReducer from "./store/reducers/RelatedWordsReducer";
 import summaryReducer from "./store/reducers/SummaryReducer";
 import generalReducer from "./store/reducers/GeneralReducer";
 import wordDictionaryReducer from "./store/reducers/WordDictionaryReducer";
+import serverReducer from "./store/reducers/ServerReducer";
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
 import {RESET_REDUX_STATE} from "./store/actions/actionTypes";
@@ -19,11 +20,18 @@ const appReducer = combineReducers({
   summary: summaryReducer,
   general: generalReducer,
   dictionary: wordDictionaryReducer,
+  server: serverReducer,
 });
 
 const rootReducer = (state, action) => {
   if (action.type === RESET_REDUX_STATE) {
-    state = undefined;
+    state = {
+      related: undefined,
+      summary: undefined,
+      general: undefined,
+      dictionary: undefined,
+      server: state.server,
+    };
   }
   return appReducer(state, action);
 };

@@ -13,10 +13,3 @@ export const storeSearchWord = (payload) => {
     payload: payload,
   };
 };
-
-export const setIsServerOnline = (payload) => {
-  return {
-    type: actionType.SET_IS_SERVER_ONLINE,
-    payload: payload,
-  };
-};

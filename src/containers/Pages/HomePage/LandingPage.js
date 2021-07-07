@@ -58,7 +58,7 @@ class LandingPage extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    isServerOn: state.general.isServerOn,
+    isServerOn: state.server.isServerOn,
   };
 };
 const mapDispatchToProps = (dispatch) => {
