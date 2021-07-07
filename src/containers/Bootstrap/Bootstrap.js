@@ -13,12 +13,10 @@ class Bootstrap extends React.Component {
     // Check server status
     getRelatedWordsAPI("test")
       .then((res) => {
-        console.log("success");
         this.props.setIsServerOnline(true);
         this.setState({isServerChecked: true});
       })
       .catch((err) => {
-        console.log("failed");
         this.props.setIsServerOnline(false);
         this.setState({isServerChecked: true});
       });

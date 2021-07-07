@@ -1,3 +1,8 @@
+export const keywords = {
+  // Keywords
+  link: "<link:url>",
+};
+
 const messages = {
   // Search Bar
   searchPlaceHolder: "Search Word",
@@ -19,8 +24,10 @@ const messages = {
     " Our goal is to create a website that summarizes massive amounts of information from the web and provides a visual and interactive way of displaying results. Thus users have a higher dimension way of browsing information and learning about new topics from the web.",
 
   // Offline Server message
-  offlineServerDefault:
-    "Welcome to Synogram, currently you are accessing the Offline version of our product. To see full capabilities of the product please check out our <github:url> repo",
+  offlineServerDefault: `Welcome to Synogram, currently you are accessing the Offline version of our product. To see full capabilities of the product please check out our ${keywords.link} repo`,
+
+  // external
+  github: "Github",
 };
 
 export default messages;
