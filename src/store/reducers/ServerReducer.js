@@ -2,6 +2,7 @@ import * as actionTypes from "../actions/actionTypes";
 
 const initialState = {
   isServerOn: false,
+  showServerStatus: true,
 };
 
 const ServerReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const ServerReducer = (state = initialState, action) => {
       return {
         ...state,
         isServerOn: action.payload,
+      };
+    case actionTypes.SET_SHOW_SERVER_STATUS:
+      return {
+        ...state,
+        showServerStatus: action.payload,
       };
     default:
       return state;

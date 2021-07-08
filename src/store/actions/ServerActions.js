@@ -6,3 +6,10 @@ export const setIsServerOnline = (payload) => {
     payload: payload,
   };
 };
+
+export const setShowServerStatus = (payload) => {
+  return {
+    type: actionType.SET_SHOW_SERVER_STATUS,
+    payload: payload,
+  };
+};

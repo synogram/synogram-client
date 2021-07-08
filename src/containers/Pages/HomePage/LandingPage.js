@@ -1,13 +1,11 @@
 import React from "react";
 import styles from "./LandingPage.module.scss";
 import SearchBar from "../../../components/SearchBar/SearchBar";
-import messages, {keywords} from "../../../constants/Messages";
+import messages from "../../../constants/Messages";
 import NavBar from "../../../components/NavBar/Navbar";
 import {connect} from "react-redux";
 import {RESET_REDUX_STATE} from "../../../store/actions/actionTypes";
 import Logo from "../../../components/Logo/Logo";
-import Notification from "../../../components/Notification/Notification";
-import {replaceStrToJSX} from "../../../utilities/helperFunctions";
 
 class LandingPage extends React.Component {
   magnifyGlassId = "Magnifying_Glass";
@@ -20,24 +18,6 @@ class LandingPage extends React.Component {
   render() {
     return (
       <div className={styles.landingPage}>
-        {!this.props.isServerOn && (
-          <Notification
-            text={replaceStrToJSX(
-              messages.offlineServerDefault,
-              keywords.link,
-              <a
-                href="https://github.com/synogram/synogram"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.link}
-                key={"github repo link"}
-              >
-                {messages.github}
-              </a>
-            )}
-          />
-        )}
-
         <div className={styles.content}>
           <NavBar className={styles.landingPageNavbar} />
           <Logo />
@@ -56,15 +36,10 @@ class LandingPage extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isServerOn: state.server.isServerOn,
-  };
-};
 const mapDispatchToProps = (dispatch) => {
   return {
     resetRedux: () => dispatch({type: RESET_REDUX_STATE}),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);
+export default connect(null, mapDispatchToProps)(LandingPage);
