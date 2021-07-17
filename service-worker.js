@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/synogram-client/precache-manifest.9cdfd844a4286f883d4ab8815e0f13d9.js"
+  "/synogram-client/precache-manifest.fb25c4eb2f8374f2a5a4181c0eaef813.js"
 );
 
 self.addEventListener('message', (event) => {
