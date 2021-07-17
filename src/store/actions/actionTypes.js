@@ -25,3 +25,7 @@ export const GET_WORD_SUMMARY_FAILURE = "getWordSummaryFailure";
 export const GET_WORD_DICTIONARY_BEGIN = "getWordDictionaryBegin";
 export const GET_WORD_DICTIONARY_SUCCESS = "getWordDictionarySuccess";
 export const GET_WORD_DICTIONARY_FAILURE = "getWordDictionaryFailure";
+
+// Server Reducer
+export const SET_IS_SERVER_ONLINE = "checkServerOnline";
+export const SET_SHOW_SERVER_STATUS = "setShowServerStatus";

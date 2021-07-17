@@ -1,23 +1,37 @@
 .Logo {
-    color: #5f5f5f;
-    text-align: center;
-    display: flex;
+  color: #5f5f5f;
+  text-align: center;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  overflow-x: hidden;
+  width: fit-content;
+
+  // make it unselectable
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  & h1 {
+    display: contents;
     margin: 0;
-    justify-content: center;
-    overflow-x: hidden;
-    width: fit-content;
-    
-    & h1 {
-      display: contents;
-      margin: 0;
-      font-size: 13vw;
-    }
+    font-size: 13vw;
+  }
 
-    
-    & .synogramIcon {
-        width: 12.5vw;
-        margin-top: -2.5vw;
-        margin-right: -2.5vw;
-    }
+  & .synogramIcon {
+    width: 12.5vw;
+    margin-top: -2.5vw;
+    margin-right: -2.5vw;
+
+    // make it unselectable
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
 }
-

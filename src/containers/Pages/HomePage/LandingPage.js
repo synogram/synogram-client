@@ -35,6 +35,7 @@ class LandingPage extends React.Component {
     );
   }
 }
+
 const mapDispatchToProps = (dispatch) => {
   return {
     resetRedux: () => dispatch({type: RESET_REDUX_STATE}),

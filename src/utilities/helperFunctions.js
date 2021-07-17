@@ -16,3 +16,16 @@ export const searchTree = (tree, name, children) => {
   }
   return null;
 };
+
+export const replaceStrToJSX = (originalStr, replaceKeyword, replaceJSX) => {
+  const splitArr = originalStr.split(replaceKeyword);
+  splitArr.splice(1, 0, "space");
+  const result = splitArr.map((item, index) => {
+    if (index === 1) {
+      return replaceJSX;
+    } else {
+      return item;
+    }
+  });
+  return result;
+};

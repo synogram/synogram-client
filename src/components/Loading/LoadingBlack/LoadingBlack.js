@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Loading.module.scss";
+import styles from "./LoadingBlack.module.scss";
 
-const Loading = () => {
+const LoadingBlack = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.circle}></div>
@@ -15,4 +15,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default LoadingBlack;

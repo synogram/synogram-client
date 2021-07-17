@@ -4,11 +4,12 @@ import styles from "./TreeGraph.module.scss";
 import "./Node.module.scss";
 import {connect} from "react-redux";
 import * as actionTypes from "../../store/index";
+import {offlineData} from "../../utilities/data/offlineData";
+
 class TreeGraph extends Component {
   state = {translate: {x: 0, y: 0}, reload: false};
 
   componentDidMount() {
-    
     const dimensions = this.treeContainer.getBoundingClientRect();
     this.setState({
       translate: {
@@ -24,21 +25,43 @@ class TreeGraph extends Component {
         className={styles.treeGraphContainer}
         ref={(tc) => (this.treeContainer = tc)}
       >
-       { this.props.relatedWordsTree !== undefined && Object.keys(this.props.relatedWordsTree).length !== 0 && <Tree
-          data={this.props.relatedWordsTree ? this.props.relatedWordsTree : {}}
-          translate={this.state.translate}
-          pathFunc="straight"
-          rootNodeClassName="node__root"
-          branchNodeClassName="node__branch"
-          leafNodeClassName="node__leaf"
-          zoomable={true}
-          onNodeClick={(nodeValue, event) => {
-            this.props.storeSearchWord(nodeValue.name);
-            this.props.addRelatedWord(nodeValue.name);
-            this.props.getSummary(nodeValue.name);
-            this.props.getWordDictionary(nodeValue.name);
-          }}
-        />}
+        {this.props.isServerOn ? (
+          this.props.relatedWordsTree !== undefined &&
+          Object.keys(this.props.relatedWordsTree).length !== 0 && (
+            <Tree
+              data={
+                this.props.relatedWordsTree ? this.props.relatedWordsTree : {}
+              }
+              translate={this.state.translate}
+              pathFunc="straight"
+              rootNodeClassName="node__root"
+              branchNodeClassName="node__branch"
+              leafNodeClassName="node__leaf"
+              zoomable={true}
+              onNodeClick={(nodeValue, event) => {
+                this.props.storeSearchWord(nodeValue.name);
+                this.props.addRelatedWord(nodeValue.name);
+                this.props.getSummary(nodeValue.name);
+                this.props.getWordDictionary(nodeValue.name);
+              }}
+            />
+          )
+        ) : (
+          <Tree
+            data={offlineData}
+            translate={this.state.translate}
+            pathFunc="straight"
+            rootNodeClassName="node__root"
+            branchNodeClassName="node__branch"
+            leafNodeClassName="node__leaf"
+            zoomable={true}
+            initialDepth={1}
+            onNodeClick={(nodeValue, event) => {
+              this.props.storeSearchWord(nodeValue.name);
+              this.props.getWordDictionary(nodeValue.name);
+            }}
+          />
+        )}
       </div>
     );
   }
@@ -46,13 +69,15 @@ class TreeGraph extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    relatedWordsTree: state.related.relatedWordsTree
-  }
-}
+    relatedWordsTree: state.related.relatedWordsTree,
+    isServerOn: state.server.isServerOn,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addRelatedWord: (searchWord) => dispatch(actionTypes.addRelatedWords({searchWord})),
+    addRelatedWord: (searchWord) =>
+      dispatch(actionTypes.addRelatedWords({searchWord})),
     getSummary: (value) => dispatch(actionTypes.getSummary(value)),
     getWordDictionary: (value) =>
       dispatch(actionTypes.getWordDictionary(value)),

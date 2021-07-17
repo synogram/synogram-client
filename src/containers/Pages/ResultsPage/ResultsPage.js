@@ -5,7 +5,7 @@ import NavBarWSeachbar from "../../../components/NavBarWSearchbar/NavBarWSeachba
 import Descriptions from "../../Descriptions/Descriptions";
 import {connect} from "react-redux";
 import * as actionTypes from "../../../store/index";
-import Loading from "../../../components/Loading/Loading";
+import LoadingWhite from "../../../components/Loading/LoadingWhite/LoadingWhite";
 import Error from "../../../components/Error/Error";
 import GraphSelection from "../../../components/GraphSelection/GraphSelection";
 import TreeGraph from "../../../components/TreeGraph/TreeGraph";
@@ -33,16 +33,29 @@ class ResultsPage extends React.Component {
   render() {
     return (
       <div className={styles.container}>
-        {this.props.error ? <Error /> : 
-          <React.Fragment>
-            <NavBarWSeachbar isSearchBarHidden={false} />
-            {this.props.searchWord && this.props.loading && <Loading />}
-            <div className={styles.resultsContent}>
-              <TreeGraph />
-              <GraphSelection />
-            </div>
-            <Descriptions />
-          </React.Fragment>}
+        <NavBarWSeachbar isSearchBarHidden={false} />
+        {this.props.searchWord && this.props.loading && <LoadingWhite />}
+        <div className={styles.resultsContent}>
+          {this.props.searchWord &&
+            !this.props.loading &&
+            !this.props.error &&
+            this.props.isServerOn && (
+              <>
+                <TreeGraph />
+                <GraphSelection />
+              </>
+            )}
+          {this.props.searchWord &&
+            !this.props.isServerOn &&
+            !this.props.loading && (
+              <>
+                <TreeGraph />
+                <GraphSelection />
+              </>
+            )}
+          {this.props.searchWord && this.props.error && <Error />}
+        </div>
+        <Descriptions />
       </div>
     );
   }
@@ -57,6 +70,7 @@ const mapStateToProps = (state) => {
     relatedWordsTree: state.related.relatedWordsTree,
     error: state.related.error,
     dictionaryLoading: state.dictionary.loading,
+    isServerOn: state.server.isServerOn,
   };
 };
 
