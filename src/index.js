@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
 import * as serviceWorker from "./serviceWorker";
-import {BrowserRouter} from "react-router-dom";
+import {HashRouter} from "react-router-dom";
 import Layout from "./containers/Layouts/Layout";
 import Bootstrap from "./containers/Bootstrap/Bootstrap";
 import {createStore, combineReducers, applyMiddleware, compose} from "redux";
@@ -43,15 +43,15 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
+  <React.StrictMode>
+    <HashRouter>
       <Provider store={store}>
         <Bootstrap>
           <Layout></Layout>
         </Bootstrap>
       </Provider>
-    </React.StrictMode>
-  </BrowserRouter>,
+    </HashRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 
