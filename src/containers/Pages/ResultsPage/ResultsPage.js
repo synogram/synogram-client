@@ -36,7 +36,16 @@ class ResultsPage extends React.Component {
         <NavBarWSeachbar isSearchBarHidden={false} />
         {this.props.searchWord && this.props.loading && <LoadingWhite />}
         <div className={styles.resultsContent}>
-          {this.props.searchWord && !this.props.loading && !this.props.error && (
+          {this.props.searchWord &&
+            !this.props.loading &&
+            !this.props.error &&
+            this.props.isServerOnline && (
+              <>
+                <TreeGraph />
+                <GraphSelection />
+              </>
+            )}
+          {!this.props.isServerOnline && !this.props.loading && (
             <>
               <TreeGraph />
               <GraphSelection />
@@ -59,6 +68,7 @@ const mapStateToProps = (state) => {
     relatedWordsTree: state.related.relatedWordsTree,
     error: state.related.error,
     dictionaryLoading: state.dictionary.loading,
+    isServerOnline: state.server.isServerOnline,
   };
 };
 
