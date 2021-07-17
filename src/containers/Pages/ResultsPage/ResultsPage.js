@@ -39,18 +39,20 @@ class ResultsPage extends React.Component {
           {this.props.searchWord &&
             !this.props.loading &&
             !this.props.error &&
-            this.props.isServerOnline && (
+            this.props.isServerOn && (
               <>
                 <TreeGraph />
                 <GraphSelection />
               </>
             )}
-          {!this.props.isServerOnline && !this.props.loading && (
-            <>
-              <TreeGraph />
-              <GraphSelection />
-            </>
-          )}
+          {this.props.searchWord &&
+            !this.props.isServerOn &&
+            !this.props.loading && (
+              <>
+                <TreeGraph />
+                <GraphSelection />
+              </>
+            )}
           {this.props.searchWord && this.props.error && <Error />}
         </div>
         <Descriptions />
@@ -68,7 +70,7 @@ const mapStateToProps = (state) => {
     relatedWordsTree: state.related.relatedWordsTree,
     error: state.related.error,
     dictionaryLoading: state.dictionary.loading,
-    isServerOnline: state.server.isServerOnline,
+    isServerOn: state.server.isServerOn,
   };
 };
 

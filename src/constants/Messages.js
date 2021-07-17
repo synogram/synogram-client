@@ -25,6 +25,11 @@ const messages = {
 
   // Offline Server message
   offlineServerDefault: `Welcome to Synogram, currently you are accessing the Offline version of our product. To see full capabilities of the product please check out our ${keywords.link} repo`,
+  offlineServerDescription: `Currently you are accessing the Offline version of our product. To see full capabilities of the product please check out our ${keywords.link} repo`,
+
+  // Graph Selection message
+  graphSelectionTreeGraph:
+    "Observe the related words in a tree graph format. Interact by clicking on the nodes or scrolling on the graphs.",
 
   // external
   github: "Github",

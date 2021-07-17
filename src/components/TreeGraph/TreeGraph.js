@@ -25,7 +25,7 @@ class TreeGraph extends Component {
         className={styles.treeGraphContainer}
         ref={(tc) => (this.treeContainer = tc)}
       >
-        {this.props.isServerOnline ? (
+        {this.props.isServerOn ? (
           this.props.relatedWordsTree !== undefined &&
           Object.keys(this.props.relatedWordsTree).length !== 0 && (
             <Tree
@@ -70,7 +70,7 @@ class TreeGraph extends Component {
 const mapStateToProps = (state) => {
   return {
     relatedWordsTree: state.related.relatedWordsTree,
-    isServerOnline: state.server.isServerOnline,
+    isServerOn: state.server.isServerOn,
   };
 };
 
