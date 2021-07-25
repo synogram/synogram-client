@@ -53,7 +53,9 @@ class ResultsPage extends React.Component {
                 <GraphSelection />
               </>
             )}
-          {this.props.searchWord && this.props.error && <Error />}
+          {this.props.searchWord &&
+            this.props.error &&
+            this.props.isServerOn && <Error />}
         </div>
         <Descriptions />
       </div>
