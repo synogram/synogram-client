@@ -5,6 +5,7 @@ import DescriptionWordListBtns from "./DescriptionWordListBtns/DescriptionButton
 import DescriptionWordInfo from "./DescriptionWordInfo/DescriptionWordInfo.js";
 import UpChevron from "../../assets/icons/descriptionModalUpChevron.svg";
 import {connect} from "react-redux";
+import LoadingWhite from "../../components/Loading/LoadingWhite/LoadingWhite";
 
 class Descriptions extends Component {
   constructor(props) {
@@ -50,12 +51,18 @@ class Descriptions extends Component {
         </button>
         {this.state.isWordListClicked && (
           <div className={styles.collapsibleContent}>
-            <div className={styles.wordList}>
-              <DescriptionWordListBtns wordListArr={WORD_LIST} />
-            </div>
-            <div className={styles.mainDescriptionItem}>
-              <DescriptionWordInfo />
-            </div>
+            {this.props.definitionLoading && this.props.descriptionLoading ? (
+              <LoadingWhite style={{marginTop: "3rem"}} />
+            ) : (
+              <>
+                <div className={styles.wordList}>
+                  <DescriptionWordListBtns wordListArr={WORD_LIST} />
+                </div>
+                <div className={styles.mainDescriptionItem}>
+                  <DescriptionWordInfo />
+                </div>
+              </>
+            )}
           </div>
         )}
       </div>
@@ -66,6 +73,8 @@ class Descriptions extends Component {
 const mapStateToProps = (state) => {
   return {
     relatedWords: state.related.relatedWords,
+    descriptionLoading: state.summary.loading,
+    definitionLoading: state.dictionary.loading,
   };
 };
 
