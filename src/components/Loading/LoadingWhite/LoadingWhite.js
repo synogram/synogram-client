@@ -1,9 +1,11 @@
 import React from "react";
 import styles from "./LoadingWhite.module.scss";
 
-const LoadingWhite = () => {
+const LoadingWhite = (props) => {
+  const style = props.style;
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} style={style}>
       <div className={styles.circle}></div>
       <div className={styles.circle}></div>
       <div className={styles.circle}></div>

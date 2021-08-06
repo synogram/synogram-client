@@ -2,6 +2,6 @@ import Axios from "axios";
 
 const axios = Axios.create();
 
-axios.defaults.baseURL = "http://localhost:5000/";
+axios.defaults.baseURL = "https://synogram.herokuapp.com/";
 
 export default axios;
