@@ -29,7 +29,7 @@ const messages = {
 
   // Graph Selection message
   graphSelectionTreeGraph:
-    "Observe the related words in a tree graph format. Interact by clicking on the nodes or scrolling on the graphs.",
+    "Observe the related words in a tree graph format. Interact by clicking on the nodes, dragging on the graph, or scrolling on the graphs.",
 
   // external
   github: "Github",

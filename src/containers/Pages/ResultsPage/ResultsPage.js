@@ -34,7 +34,15 @@ class ResultsPage extends React.Component {
     return (
       <div className={styles.container}>
         <NavBarWSeachbar isSearchBarHidden={false} />
-        {this.props.searchWord && this.props.loading && <LoadingWhite />}
+        {this.props.searchWord && this.props.loading && (
+          <LoadingWhite
+            style={{
+              left: "50%",
+              top: "50%",
+              transform: "translate(-50%, -50%)",
+            }}
+          />
+        )}
         <div className={styles.resultsContent}>
           {this.props.searchWord &&
             !this.props.loading &&
