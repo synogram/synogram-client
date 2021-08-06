@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4b52ddf99df18e13e757804e6866edff",
+    "revision": "5886a62e993a7fa104103dfb83af5ebd",
     "url": "/synogram-client/index.html"
   },
   {
-    "revision": "b33e0e7851f7c4e326da",
-    "url": "/synogram-client/static/css/main.d6d686fd.chunk.css"
+    "revision": "fbaafe77223eacbe7234",
+    "url": "/synogram-client/static/css/main.085bc021.chunk.css"
   },
   {
     "revision": "0bec678528fa8e500ca1",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/synogram-client/static/js/2.6c7de4a9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b33e0e7851f7c4e326da",
-    "url": "/synogram-client/static/js/main.0d5dba50.chunk.js"
+    "revision": "fbaafe77223eacbe7234",
+    "url": "/synogram-client/static/js/main.1e745729.chunk.js"
   },
   {
     "revision": "5b2815ba1ba6bebffabf",

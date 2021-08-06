@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/synogram-client/static/css/main.d6d686fd.chunk.css",
-    "main.js": "/synogram-client/static/js/main.0d5dba50.chunk.js",
-    "main.js.map": "/synogram-client/static/js/main.0d5dba50.chunk.js.map",
+    "main.css": "/synogram-client/static/css/main.085bc021.chunk.css",
+    "main.js": "/synogram-client/static/js/main.1e745729.chunk.js",
+    "main.js.map": "/synogram-client/static/js/main.1e745729.chunk.js.map",
     "runtime-main.js": "/synogram-client/static/js/runtime-main.ecc7bcf1.js",
     "runtime-main.js.map": "/synogram-client/static/js/runtime-main.ecc7bcf1.js.map",
     "static/js/2.6c7de4a9.chunk.js": "/synogram-client/static/js/2.6c7de4a9.chunk.js",
     "static/js/2.6c7de4a9.chunk.js.map": "/synogram-client/static/js/2.6c7de4a9.chunk.js.map",
     "index.html": "/synogram-client/index.html",
-    "precache-manifest.fb25c4eb2f8374f2a5a4181c0eaef813.js": "/synogram-client/precache-manifest.fb25c4eb2f8374f2a5a4181c0eaef813.js",
+    "precache-manifest.9964dc322da44cfebcab0470bc751650.js": "/synogram-client/precache-manifest.9964dc322da44cfebcab0470bc751650.js",
     "service-worker.js": "/synogram-client/service-worker.js",
-    "static/css/main.d6d686fd.chunk.css.map": "/synogram-client/static/css/main.d6d686fd.chunk.css.map",
+    "static/css/main.085bc021.chunk.css.map": "/synogram-client/static/css/main.085bc021.chunk.css.map",
     "static/js/2.6c7de4a9.chunk.js.LICENSE.txt": "/synogram-client/static/js/2.6c7de4a9.chunk.js.LICENSE.txt",
     "static/media/descriptionModalUpChevron.svg": "/synogram-client/static/media/descriptionModalUpChevron.77757a49.svg",
     "static/media/email-logo.svg": "/synogram-client/static/media/email-logo.a132ad6e.svg",
@@ -25,7 +25,7 @@
   "entrypoints": [
     "static/js/runtime-main.ecc7bcf1.js",
     "static/js/2.6c7de4a9.chunk.js",
-    "static/css/main.d6d686fd.chunk.css",
-    "static/js/main.0d5dba50.chunk.js"
+    "static/css/main.085bc021.chunk.css",
+    "static/js/main.1e745729.chunk.js"
   ]
 }
